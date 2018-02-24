@@ -1,9 +1,9 @@
 ---
 layout: page
 title: "Readings"
-description: "Hey, this is Qing."
+description: ""
 header-img: "img/hands-hand-book-reading.jpg"
-multilingual: true
+multilingual: false
 ---
 
 <!-- Language Selector -->
@@ -14,15 +14,10 @@ multilingual: true
 
 <!-- Chinese Version -->
 <div class="zh post-container">
-    {% capture about_zh %}{% include readings/zh.md %}{% endcapture %}
+    {% capture about_zh %}{% include_relative readings.md %}{% endcapture %}
     {{ about_zh | markdownify }}
 </div>
 
-<!-- English Version -->
-<div class="en post-container">
-    {% capture about_en %}{% include readings/en.md %}{% endcapture %}
-    {{ about_en | markdownify }}
-</div>
 
 
 {% if site.disqus_username %}
