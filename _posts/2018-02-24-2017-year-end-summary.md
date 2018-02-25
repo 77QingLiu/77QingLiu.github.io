@@ -9,7 +9,7 @@ header-mask:  0.3
 catalog:      true
 multilingual: true
 tags:
-    -
+    - 总结
 ---
 <!-- Chinese Version -->
 <div class="zh post-container">
