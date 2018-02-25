@@ -2,7 +2,7 @@
 
 
 # 回顾
-在2017年，我的所有的时间精力都花在准备研究生考试，学习计算机科学上，而工作呢？则无暇顾及，但是我会觉得遗憾吗？
+在2017年，我所有的时间精力都花在准备研究生考试、学习计算机科学上，而工作呢？则无暇顾及，但是我会觉得遗憾吗？
 
 #### 数据科学：
 * 学习如何使用[Python](https://www.python.org/)的数据科学软件包，包括：[Pandas](https://pandas.pydata.org/)，[Numpy](http：// www。 numpy.org/)，[Matplotlib](https://matplotlib.org/)
@@ -13,7 +13,7 @@
 #### 计算机科学：
 * 学习[Python](https://www.python.org/)，包括一般的Python和面向对象编程，并尝试用python写一些小的工具
 * 学习C语言，主要是通过阅读经典书籍[The C Programming Language](https://book.douban.com/subject/1236999/)(其实是为了应付研究生考试)
-* 也学习了一些数据结构和算法，看了算法第四版，现在正在刷[ECNU](http://acm.ecnu.edu.cn/problem/)
+* 也学习了一些数据结构和算法，看了[算法第四版](https://book.douban.com/subject/19952400/)，现在正在刷[ECNU](http://acm.ecnu.edu.cn/problem/)
 
 我为什么选择Python？而不是R或者其他语言？不仅因为Python是数据科学里面最流行的计算机语言，更因为其自由创新的开源精神。
 
