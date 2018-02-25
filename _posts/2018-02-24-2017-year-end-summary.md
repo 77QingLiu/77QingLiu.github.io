@@ -11,3 +11,14 @@ multilingual: true
 tags:
     -
 ---
+<!-- Chinese Version -->
+<div class="zh post-container">
+    {% capture about_zh %}{% include_relative 2017-year-end-summary/zh.md %}{% endcapture %}
+    {{ about_zh | markdownify }}
+</div>
+
+<!-- English Version -->
+<div class="en post-container">
+    {% capture about_en %}{% include_relative 2017-year-end-summary/en.md %}{% endcapture %}
+    {{ about_en | markdownify }}
+</div>
