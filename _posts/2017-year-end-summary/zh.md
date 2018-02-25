@@ -18,7 +18,7 @@
 我为什么选择Python？而不是R或者其他语言？不仅因为Python是数据科学里面最流行的计算机语言，更因为其自由创新的开源精神。
 
 #### 工作：
-* 从CRO跳槽到制药公司(甲方到乙方)
+* 从CRO跳槽到制药公司(乙方到甲方)
 * 参加PharmaSUG China 2017，提交论文[Streamline Table Lookup by Embedding HASH in FCMP](http://www.lexjansen.com/pharmasug-cn/2017/AD/PharmaSUG-China-2017-AD02.pdf)
 
 #### 其他：
