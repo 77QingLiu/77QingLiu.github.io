@@ -1,13 +1,13 @@
-> 作为一个SAS程序员，对我来说，2017是奋斗的一年。我依靠SAS来生活，但是像我这样的SAS程序员很酷吗？这不是一个愚蠢的问题。
+> 作为一个SAS程序员，对我来说，2017是挣扎的一年。我依靠SAS来生活，但是像我这样的SAS程序员很酷吗？这不是一个愚蠢的问题。
 
 
 # 回顾
-在2017年，我所有的时间精力都花在准备研究生考试、学习计算机科学上，而工作呢？则无暇顾及，但是我会觉得遗憾吗？
+2017，我所有的时间精力都花在准备研究生考试、学习计算机科学上，而工作呢？则无暇顾及，但是我会觉得遗憾吗？
 
 #### 数据科学：
-* 学习如何使用[Python](https://www.python.org/)的数据科学软件包，包括：[Pandas](https://pandas.pydata.org/)，[Numpy](http：// www。 numpy.org/)，[Matplotlib](https://matplotlib.org/)
-* 一些高等数学
-* 一些线性代数
+* 学习[Python](https://www.python.org/)中的数据科学软件包：[Pandas](https://pandas.pydata.org/)，[Numpy](http：// www。 numpy.org/)，[Matplotlib](https://matplotlib.org/)
+* 高等数学
+* 线性代数
 * [概率论与数理统计](https://book.douban.com/subject/2285151/)
 
 #### 计算机科学：
@@ -19,7 +19,7 @@
 
 #### 工作：
 * 从CRO跳槽到制药公司(乙方到甲方)
-* 参加PharmaSUG China 2017，提交论文[Streamline Table Lookup by Embedding HASH in FCMP](http://www.lexjansen.com/pharmasug-cn/2017/AD/PharmaSUG-China-2017-AD02.pdf)
+* 参加PharmaSUG China 2017，提交会议论文[Streamline Table Lookup by Embedding HASH in FCMP](http://www.lexjansen.com/pharmasug-cn/2017/AD/PharmaSUG-China-2017-AD02.pdf)
 
 #### 其他：
 * 参加了全国研究生统一考试，目标：[华东师范大学](http://www.ecnu.edu.cn/)非全日制研究生。（update: **已过线，等待复试**）
