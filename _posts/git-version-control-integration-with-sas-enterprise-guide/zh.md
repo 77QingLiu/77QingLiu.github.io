@@ -64,9 +64,11 @@ Git的一些特点
 ![log](img/in-post/git-version-control-integration-with-sas-enterprise-guide/log.png)
 
 > 我还需要安装Git吗？
+
 SAS Enterprise Guide 7.1仅仅是将外部的Git命令做成了内部的功能按键，因此，**你需要在电脑上安装Git**
 
 > 我打开程序后，你第一次提交出现了以下窗口。
+
 ![window](img/in-post/git-version-control-integration-with-sas-enterprise-guide/window.png)
 这是因为你的程序不在Git仓库下，需要通过在当前工作目录或父目录中提交`git init`来初始化Git存储库。
 
