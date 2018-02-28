@@ -59,11 +59,10 @@ A major new feature in SAS Enterprise Guide version 7.1 is the capability to ret
 #### View commit history - equal to `git log`
 ![log](img/in-post/git-version-control-integration-with-sas-enterprise-guide/log.png)
 
-{% note warning %}If you open a Externally Referenced SAS Program(not embeded in EG), the first time you commit would result in the following window.
+If you open a Externally Referenced SAS Program(not embeded in EG), the first time you commit would result in the following window.
 
 ![window](img/in-post/git-version-control-integration-with-sas-enterprise-guide/window.png)
 This is that your program is not in a Git repository. you can init Git repository by submitting `git init` in your current working directory or parent directory.
-{% endnote %}
 
 #### Recommend Reading
 * [Pro Git](https://bingohuang.gitbooks.io/progit2/content/01-introduction/1-introduction.html)

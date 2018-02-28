@@ -63,11 +63,11 @@ SAS企业指南7.1版中的一项主要新功能是通过集成Git来保留SAS�
 ####查看提交历史记录 - 等于`git log`
 ![日志](IMG/在后/git的版本控制集成，与-SAS企业引导/log.pngd)
 
-{％note warning％}如果你打开一个外部参考SAS程序(EG中没有嵌入d)，你第一次提交会导致以下窗口。
+如果你打开一个外部参考SAS程序(EG中没有嵌入d)，你第一次提交会导致以下窗口。
 
 ![窗口](IMG/在后/git的版本控制集成，与-SAS企业引导/window.pngd)
 这是你的程序不在Git仓库中。你可以通过在当前工作目录或父目录中提交`git init`来初始化Git存储库。
-{％endnote％}
+
 
 推荐阅读
 *  [Pro Git](https://bingohuang.gitbooks.io/progit2/content/01-introduction/1-introduction.htmld)
