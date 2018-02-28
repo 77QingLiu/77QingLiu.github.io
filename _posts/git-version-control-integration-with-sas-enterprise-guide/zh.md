@@ -54,13 +54,13 @@ Git的一些特点
 从SAS Enterprise Guide 7.1开始，能够在SAS中集成Git，从而实现保留SAS代码的历史版本。SAS已将其做成了功能按键，用户只需简单点击按键，及可实现SAS的版本控制！
 ![eg_git](img/in-post/git-version-control-integration-with-sas-enterprise-guide/eg_git1.png)
 
-####提交更改 - 等于`git add + git commit`
+#### 提交更改 - 等同于`git add + git commit`
 ![commit](img/in-post/git-version-control-integration-with-sas-enterprise-guide/commit.JPG)
 
-####跟踪更改 - 等于`git diff`
+#### 跟踪更改 - 等同于`git diff`
 ![diff](img/in-post/git-version-control-integration-with-sas-enterprise-guide/diff.png)
 
-####查看提交历史记录 - 等于`git log`
+#### 查看提交历史记录 - 等同于`git log`
 ![log](img/in-post/git-version-control-integration-with-sas-enterprise-guide/log.png)
 
 > 我还需要安装Git吗？
