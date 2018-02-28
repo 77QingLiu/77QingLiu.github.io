@@ -25,7 +25,7 @@ Git的一些特点
 * 完全分布式
 * 能够高效地处理Linux内核等大型项目
 
-## Git的关键概念
+## 关键概念
 
 ![workspace](img/in-post/git-version-control-integration-with-sas-enterprise-guide/workspace.png)
 
@@ -35,7 +35,7 @@ Git的一些特点
 
 *  **Git目录**：Git目录是Git存储项目元数据和对象数据库的地方。这是Git最重要的部分，它是从另一台计算机克隆存储库时复制的内容。
 
-## Git工作流程
+## 工作流程
 ![process](img/in-post/git-version-control-integration-with-sas-enterprise-guide/workflow.png)
 
 1.首先，初始化仓库(`git init`d)或克隆放在其他地方的仓库(`git clone path/to/.git`d)。
