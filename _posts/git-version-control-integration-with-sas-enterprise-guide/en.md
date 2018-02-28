@@ -12,8 +12,8 @@ Version Control allows you:
 
 ## A Scenario of Chaos without Version Control
 Below is a simple screen shot of a set of files(chaos) to backup projects.
-![backup1](img/in-post/git-version-control-integration-with-sas-enterprise-guide/backup1.JPG)
-![backup2](img/in-post/git-version-control-integration-with-sas-enterprise-guide/backup2.JPG)
+![backup1](/img/in-post/git-version-control-integration-with-sas-enterprise-guide/backup1.JPG)
+![backup2](/img/in-post/git-version-control-integration-with-sas-enterprise-guide/backup2.JPG)
 
 ## What is Git
 Git is an open source distributed version control system for efficient, high-speed processing of project versions from very small to very large. Git is developed by Linus Torvalds to help manage Linux kernel development.
@@ -26,7 +26,7 @@ Some characters of Git
 
 ## Key concepts with Git
 
-![workspace](img/in-post/git-version-control-integration-with-sas-enterprise-guide/workspace.png)
+![workspace](/img/in-post/git-version-control-integration-with-sas-enterprise-guide/workspace.png)
 
 * **Working directory**: Is the current working directory where you develop you code or write documents.
 
@@ -35,7 +35,7 @@ Some characters of Git
 * **Git directory**: The Git directory is where Git stores the metadata and object database for your project. This is the most important part of Git, and it is what is copied when you clone a repository from another computer.
 
 ## Git working process flow
-![process](img/in-post/git-version-control-integration-with-sas-enterprise-guide/workflow.png)
+![process](/img/in-post/git-version-control-integration-with-sas-enterprise-guide/workflow.png)
 1. Make your repository(`git init`) or clone repository form somewhere else(`git clone path/to/.git`).
 
 2. Modify files in your working tree. can check the status of current working directory(`git status`).
@@ -48,20 +48,20 @@ Some characters of Git
 The Git working under command line interface(CLI) makes it hard to get start for beginners, though the core concept of Git behind command is very important.
 However, For those who don't wnat to touch command line interface(CLI), SAS Enterprise Guide 7.1 is the SAVE!
 A major new feature in SAS Enterprise Guide version 7.1 is the capability to retain historical versions of the SAS code by integrating Git.
-![eg_git](img/in-post/git-version-control-integration-with-sas-enterprise-guide/eg_git1.png)
+![eg_git](/img/in-post/git-version-control-integration-with-sas-enterprise-guide/eg_git1.png)
 
 #### Commit changes - equal to `git add + git commit`
-![commit](img/in-post/git-version-control-integration-with-sas-enterprise-guide/commit.JPG)
+![commit](/img/in-post/git-version-control-integration-with-sas-enterprise-guide/commit.JPG)
 
 #### Tracking changes - equal to `git diff`
-![diff](img/in-post/git-version-control-integration-with-sas-enterprise-guide/diff.png)
+![diff](/img/in-post/git-version-control-integration-with-sas-enterprise-guide/diff.png)
 
 #### View commit history - equal to `git log`
-![log](img/in-post/git-version-control-integration-with-sas-enterprise-guide/log.png)
+![log](/img/in-post/git-version-control-integration-with-sas-enterprise-guide/log.png)
 
 If you open a Externally Referenced SAS Program(not embeded in EG), the first time you commit would result in the following window.
 
-![window](img/in-post/git-version-control-integration-with-sas-enterprise-guide/window.png)
+![window](/img/in-post/git-version-control-integration-with-sas-enterprise-guide/window.png)
 This is that your program is not in a Git repository. you can init Git repository by submitting `git init` in your current working directory or parent directory.
 
 #### Recommend Reading
