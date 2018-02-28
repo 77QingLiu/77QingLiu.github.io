@@ -12,7 +12,7 @@
 
 **没有版本控制的混沌场景**
 
-例如之前我会用下面的方式备份项目。
+例如你可能会用下面的方式备份项目。
 ![backup1](img/in-post/git-version-control-integration-with-sas-enterprise-guide/backup1.JPG)
 ![backup2](img/in-post/git-version-control-integration-with-sas-enterprise-guide/backup2.JPG)
 
@@ -47,28 +47,30 @@ Git的一些特点
 4.通过(`git commit`)提交一次，它会将文件保存在暂存区域中，并将该快照永久存储到你的Git目录。
 
 尽管Git命令背后的核心概念非常重要，但是在命令行界面(CLI)下，初学者很难入门。
-因此，对于那些不想触摸命令行界面(CLI)的用户，可以通过一系列GUI工具(比如GitHub桌面客户端)入门。
+因此，对于那些不想触摸命令行界面(CLI)的用户，可以通过一系列GUI工具(比如[GitHub桌面客户端](https://desktop.github.com/))入门。
 
 ## GIT版本控制与SAS企业版集成
-
-SAS企业指南7.1版中的一项主要新功能是通过集成Git来保留SAS代码的历史版本。
-![eg_git](IMG/在后/git的版本控制集成，与-SAS企业引导/eg_git1.pngd)
+好消息！
+从SAS Enterprise Guide 7.1开始，能够在SAS中集成Git，从而实现保留SAS代码的历史版本。SAS已将其做成了功能按键，用户只需简单点击按键，及可实现SAS的版本控制！
+![eg_git](img/in-post/git-version-control-integration-with-sas-enterprise-guide/eg_git1.png)
 
 ####提交更改 - 等于`git add + git commit`
-![提交](IMG/在后/git的版本控制集成，与-SAS企业引导/commit.JPGd)
+![commit](img/in-post/git-version-control-integration-with-sas-enterprise-guide/commit.JPG)
 
 ####跟踪更改 - 等于`git diff`
-![DIFF](IMG/在后/git的版本控制集成，与-SAS企业引导/diff.pngd)
+![diff](img/in-post/git-version-control-integration-with-sas-enterprise-guide/diff.png)
 
 ####查看提交历史记录 - 等于`git log`
-![日志](IMG/在后/git的版本控制集成，与-SAS企业引导/log.pngd)
+![log](img/in-post/git-version-control-integration-with-sas-enterprise-guide/log.png)
 
-如果你打开一个外部参考SAS程序(EG中没有嵌入d)，你第一次提交会导致以下窗口。
+> 我还需要安装Git吗？
+SAS Enterprise Guide 7.1仅仅是将外部的Git命令做成了内部的功能按键，因此，**你需要在电脑上安装Git**
 
-![窗口](IMG/在后/git的版本控制集成，与-SAS企业引导/window.pngd)
-这是你的程序不在Git仓库中。你可以通过在当前工作目录或父目录中提交`git init`来初始化Git存储库。
+> 我打开程序后，你第一次提交出现了以下窗口。
+![window](img/in-post/git-version-control-integration-with-sas-enterprise-guide/window.png)
+这是因为你的程序不在Git仓库下，需要通过在当前工作目录或父目录中提交`git init`来初始化Git存储库。
 
 
-推荐阅读
-*  [Pro Git](https://bingohuang.gitbooks.io/progit2/content/01-introduction/1-introduction.htmld)
-*  [Git飞行规则](https://github.com/k88hudson/git-flight-rulesd)
+## 推荐阅读
+* [Pro Git](https://bingohuang.gitbooks.io/progit2/content/01-introduction/1-introduction.html)
+* [Git Flight Rules](https://github.com/k88hudson/git-flight-rules)
