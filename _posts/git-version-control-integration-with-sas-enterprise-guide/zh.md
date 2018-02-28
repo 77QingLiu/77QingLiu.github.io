@@ -10,7 +10,7 @@
 * 版本控制通常也意味着如果你搞砸了或丢失了文件，你可以轻松恢复。
 * 另外，执行这些操作仅需要花费很少的开销。
 
-**没有版本控制的混沌场景**
+**没有版本控制的混乱场景**
 
 例如你可能会用下面的方式备份项目。
 ![backup1](img/in-post/git-version-control-integration-with-sas-enterprise-guide/backup1.JPG)
