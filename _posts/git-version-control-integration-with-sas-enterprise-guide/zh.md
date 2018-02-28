@@ -13,13 +13,14 @@
 **没有版本控制的混乱场景**
 
 例如你可能会用下面的方式备份项目。
-![backup1](img/in-post/git-version-control-integration-with-sas-enterprise-guide/backup1.JPG)
-![backup2](img/in-post/git-version-control-integration-with-sas-enterprise-guide/backup2.JPG)
+![backup1](/img/in-post/git-version-control-integration-with-sas-enterprise-guide/backup1.JPG)
+![backup2](/img/in-post/git-version-control-integration-with-sas-enterprise-guide/backup2.JPG)
+这种方式会导致项目十分混乱
 
-## 什么是Git
-Git是一个开源的分布式版本控制系统，用于对从非常小到非常大的项目进行高效，高速的版本控制。 Git由Linus Torvalds开发，最开始用于帮助管理Linux内核开发。
+## Git是什么？
+Git是一个开源的分布式版本控制系统，用于对非常小到非常大的项目进行高效，高速的版本控制。 Git由Linus Torvalds开发，最开始用于帮助管理Linux内核开发。
 
-Git的一些特点
+Git有很多优点
 * 速度
 * 强力支持非线性开发(数千个并行分支)
 * 完全分布式
@@ -27,7 +28,7 @@ Git的一些特点
 
 ## 关键概念
 
-![workspace](img/in-post/git-version-control-integration-with-sas-enterprise-guide/workspace.png)
+![workspace](/img/in-post/git-version-control-integration-with-sas-enterprise-guide/workspace.png)
 
 *  **工作目录**：是你开发代码或写入文档的当前工作目录。
 
@@ -36,9 +37,9 @@ Git的一些特点
 *  **Git目录**：Git目录是Git存储项目元数据和对象数据库的地方。这是Git最重要的部分，它是从另一台计算机克隆存储库时复制的内容。
 
 ## 工作流程
-![process](img/in-post/git-version-control-integration-with-sas-enterprise-guide/workflow.png)
+![process](/img/in-post/git-version-control-integration-with-sas-enterprise-guide/workflow.png)
 
-1.首先，初始化仓库(`git init`d)或克隆放在其他地方的仓库(`git clone path/to/.git`d)。
+1.首先，初始化仓库(`git init`)或克隆放在其他地方的仓库(`git clone path/to/.git`)。
 
 2.修改工作树中的文件。你可以通过(`git status`)检查当前工作目录的状态。
 
@@ -51,25 +52,28 @@ Git的一些特点
 
 ## GIT版本控制与SAS企业版集成
 好消息！
-从SAS Enterprise Guide 7.1开始，能够在SAS中集成Git，从而实现保留SAS代码的历史版本。SAS已将其做成了功能按键，用户只需简单点击按键，及可实现SAS的版本控制！
-![eg_git](img/in-post/git-version-control-integration-with-sas-enterprise-guide/eg_git1.png)
+从SAS Enterprise Guide 7.1开始，我们能够在SAS中直接使用Git，从而实现对SAS代码的版本控制。SAS已将其做成了功能按键，用户只需简单点击按键，及可实现SAS的版本控制！具体的位置见下图
+![eg_git](/img/in-post/git-version-control-integration-with-sas-enterprise-guide/eg_git1.png)
+在SAS EG中，可以直接点击相应的按键，操控程序版本。一系列的按键后其实是一系列Git命令行的运行。
 
 #### 提交更改 - 等同于`git add + git commit`
-![commit](img/in-post/git-version-control-integration-with-sas-enterprise-guide/commit.JPG)
+![commit](/img/in-post/git-version-control-integration-with-sas-enterprise-guide/commit.JPG)
 
 #### 跟踪更改 - 等同于`git diff`
-![diff](img/in-post/git-version-control-integration-with-sas-enterprise-guide/diff.png)
+![diff](/img/in-post/git-version-control-integration-with-sas-enterprise-guide/diff.png)
 
 #### 查看提交历史记录 - 等同于`git log`
-![log](img/in-post/git-version-control-integration-with-sas-enterprise-guide/log.png)
+![log](/img/in-post/git-version-control-integration-with-sas-enterprise-guide/log.png)
+
+## Q&A
 
 > 我还需要安装Git吗？
 
 SAS Enterprise Guide 7.1仅仅是将外部的Git命令做成了内部的功能按键，因此，**你需要在电脑上安装Git**
 
-> 我打开程序后，你第一次提交出现了以下窗口。
+> 打开程序后，第一次提交出现了以下窗口。
 
-![window](img/in-post/git-version-control-integration-with-sas-enterprise-guide/window.png)
+![window](/img/in-post/git-version-control-integration-with-sas-enterprise-guide/window.png)
 这是因为你的程序不在Git仓库下，需要通过在当前工作目录或父目录中提交`git init`来初始化Git存储库。
 
 
