@@ -12,3 +12,14 @@ tags:
     - Tech
     - SAS
 ---
+<!-- Chinese Version -->
+<div class="zh post-container">
+    {% capture about_zh %}{% include_relative git-version-control-integration-with-sas-enterprise-guide/zh.md %}{% endcapture %}
+    {{ about_zh | markdownify }}
+</div>
+
+<!-- English Version -->
+<div class="en post-container">
+    {% capture about_en %}{% include_relative git-version-control-integration-with-sas-enterprise-guide/en.md %}{% endcapture %}
+    {{ about_en | markdownify }}
+</div>
