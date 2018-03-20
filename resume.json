@@ -1,0 +1,89 @@
+{
+  "basics": {
+    "name": "Qing Liu",
+    "label": "Data Analyst & SAS Programmer",
+    "email": "77qingliu@gmail.com",
+    "phone": "086-13167017220",
+    "website": "http://77qingliu.com",
+    "summary": " He has earned degrees from the University of Oklahoma and Stanford. (Go Sooners and Cardinals!) Before starting Pied Piper, he worked for Hooli as a part time software developer. While his work focuses on applied information theory, mostly optimizing lossless compression schema of both the length-limited and adaptive variants, his non-work interests range widely, everything from quantum computing to chaos theory. He could tell you about it, but THAT would NOT be a “length-limited” conversation!",
+    "location": {
+      "address": "Pudongxin District, Shanghai, China",
+      "postalCode": "",
+      "city": "Shanghai",
+      "countryCode": "China",
+      "region": "Shanghai"
+    },
+    "profiles": [
+      {
+        "network": "Linkedin",
+        "url": "https://www.linkedin.com/in/77qingliu/"
+      }
+    ]
+  },
+  "work": [
+    {
+      "company": "Eli Lilly and Company",
+      "position": "Statistician - Computation",
+      "website": "http://www.lillychina.com/",
+      "startDate": "2016-11-01",
+      "summary": "In-house Statistical Programming at Eli Lilly & Company.",
+      "highlights": []
+    },
+    {
+      "company": "PAREXEL",
+      "position": "Statistical Programmer II",
+      "website": "https://www.parexel.com/",
+      "startDate": "2015-06-01",
+      "summary": "Mainly worked with outsourcing projects from J&J company as a SAS programmer.   Involved in many clinical trials projects ranged from many therapeutic area. Working scope include:  * SAS Macro Development  * SDTM(Mapping, aCRF, SPEC)   * ADaM  * TFL  * Data Clean",
+      "highlights": [],
+      "endDate": "2016-10-29"
+    }
+  ],
+  "education": [
+    {
+      "institution": "Huazhong University of Science and Technology",
+      "area": "China",
+      "studyType": "bachelor of Medicine",
+      "startDate": "2010-09-01",
+      "gpa": "3.2",
+      "courses": [],
+      "endDate": "2015-06-01"
+    }
+  ],
+  "awards": [{
+    "title": "LCDDMAC Excellence Award",
+    "date": "2018-01-01",
+    "awarder": "Eli Lilly & Company"
+  }],
+  "publications": [
+    {
+      "name": "Streamline Table Lookup by Embedding HASH in FCMP",
+      "publisher": "PharmaSUG China",
+      "releaseDate": "2017-07-08",
+      "website": "http://www.lexjansen.com/pharmasug-cn/2017/AD/PharmaSUG-China-2017-AD02.pdf",
+      "summary": "Define your own custom fuctions to perform table lookup by embedding HASH in PROC FCMP."
+    }
+  ],
+  "skills": [
+    {
+      "name": "SAS",
+      "level": "Master",
+      "keywords": ["SAS Programming", "Statistical Model"]
+    },
+    {
+      "name": "Python",
+      "level": "Master",
+      "keywords": ["Data Science", "Pandas", "Machine Learning"]
+    },
+  ],
+  "languages": [
+    {
+      "language": "Chinese",
+      "fluency": "Native or bilingual proficiency"
+    },
+    {
+      "language": "English",
+      "fluency": "Professional working proficiency"
+    }
+  ]
+}
