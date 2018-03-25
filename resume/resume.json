@@ -27,11 +27,11 @@
       "website": "http://www.lillychina.com/",
       "startDate": "2016-11-01",
       "summary": "In-house Statistical Programming at Eli Lilly & Company.",
-      "highlights": []
+      "highlights": ["LCDDMAC Excellence Award"]
     },
     {
       "company": "PAREXEL",
-      "position": "Statistical Programmer II",
+      "position": "Statistical Programmer",
       "website": "https://www.parexel.com/",
       "startDate": "2015-06-01",
       "summary": "Mainly worked with outsourcing projects from J&J company as a SAS programmer.   Involved in many clinical trials projects ranged from many therapeutic area. Working scope include:  * SAS Macro Development  * SDTM(Mapping, aCRF, SPEC)   * ADaM  * TFL  * Data Clean",
@@ -81,7 +81,7 @@
       "name": "Python",
       "level": "Master",
       "keywords": ["Data Science", "Pandas", "Machine Learning"]
-    },
+    }
   ],
   "languages": [
     {
