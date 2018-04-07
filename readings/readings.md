@@ -43,7 +43,7 @@
 
 ### 数据结构与算法
 * [算法（第四版）](https://book.douban.com/subject/19952400/)
-
+* [剑指Offer](https://book.douban.com/subject/6966465/)
 
 ### 其他
 * [Pro Git](https://book.douban.com/subject/3420144/)
