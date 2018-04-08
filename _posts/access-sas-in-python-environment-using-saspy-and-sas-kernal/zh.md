@@ -46,7 +46,7 @@ SASPy支持连接到Unix，大型机和Windows上的SAS。也可以连接到本�
   - 用于本地Windows连接的`winlocal`
   - 用于远程Linux连接的`winiomlinux`
 2. 设置CLASSPATH以访问SAS Java IOM客户机JAR文件。总共五个Java JAR文件 - 可以从现有SAS安装中获得四(4)个JAR文件，以及一个随SASPy包一起提供的JAR文件：saspyiom.jar。必须在CLASSPATH环境变量中提供这五个JAR文件(完全限定路径)。在sascfg.py文件中可以以非常简单的方式完成，如下所示：
-    ```python
+```python
     #四个SAS安装JAR文件
     cpW = r"C：\ Program Files\SASHome\SASDeploymentManager\9.4\products\deploywiz__94420__prt__xx__sp0__1\deploywiz\sas.svc.connection.jar"
     cpW + = r"; C：\ Program Files\SASHome\SASDeploymentManager\9.4\products\deploywiz__94420__prt__xx__sp0__1\deploywiz\log4j.jar"
@@ -54,7 +54,7 @@ SASPy支持连接到Unix，大型机和Windows上的SAS。也可以连接到本�
     cpW + = r"; C：\ Program Files\SASHome\SASDeploymentManager\9.4\products\deploywiz__94420__prt__xx__sp0__1\deploywiz\sas.core.jar"
     #一个来自SASPy包
     cpW + = r"; C：\ Users\qing\AppData\Local\Continuum\anaconda3\Lib\site-packages\saspy\java\saspyiom.jar"
-    ```
+```
 
 3. 为本地和远程连接设置不同的参数
   - *访问本地Windows SAS。*
