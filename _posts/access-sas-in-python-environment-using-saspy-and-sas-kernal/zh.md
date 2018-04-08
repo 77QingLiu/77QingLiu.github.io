@@ -46,7 +46,6 @@ SASPy支持连接到Unix，大型机和Windows上的SAS。也可以连接到本�
   - 用于本地Windows连接的`winlocal`
   - 用于远程Linux连接的`winiomlinux`
 2. 设置CLASSPATH以访问SAS Java IOM客户机JAR文件。总共五个Java JAR文件 - 可以从现有SAS安装中获得四(4)个JAR文件，以及一个随SASPy包一起提供的JAR文件：saspyiom.jar。必须在CLASSPATH环境变量中提供这五个JAR文件(完全限定路径)。在sascfg.py文件中可以以非常简单的方式完成，如下所示：
-
 ```python
 # Four SAS installation JAR files
 cpW  =  r"C:\Program Files\SASHome\SASDeploymentManager\9.4\products\deploywiz__94420__prt__xx__sp0__1\deploywiz\sas.svc.connection.jar"
@@ -59,12 +58,12 @@ cpW += r";C:\Users\qing\AppData\Local\Continuum\anaconda3\Lib\site-packages\sasp
 
 3. 为本地和远程连接设置不同的参数
   - *访问本地Windows SAS。*
-    ```python
-    winlocal = {'java'：r'C：\ Program Files(x86)\ Java\jre7\bin\java'，
-            'encoding'：'windows-1252'，
-            'classpath'：cpW
-            }
-    ```
+  ```python
+  winlocal = {'java'      : r'C:\Program Files (x86)\Java\jre7\bin\java',
+        'encoding'  : 'windows-1252',
+        'classpath' : cpW
+        }
+  ```
     ** java ** - (必需)要使用的Java可执行文件的路径。在Windows命令行内输入java，可以找到java的可执行文件的路径。
 
       ** encoding ** - Python内的编码值，它跟要连接的IOM服务器的SAS编码一致。 WLATIN1是在Windows上运行SAS的默认编码。映射到Python内的编码值为：windows-1252。
@@ -72,27 +71,27 @@ cpW += r";C:\Users\qing\AppData\Local\Continuum\anaconda3\Lib\site-packages\sasp
       ** classpath ** - 上一步中指定的五个JAR文件
 
      - *访问远程Linux SAS。*
-      ```python
-      winiomlinux = {'java'：r'C：\ Program Files（x86）\ Java \ jre7 \ bin \ java'，
-            'iomhost'：'server.domain.address.com'，
-            'iomport'：8597，
-            'encoding'：'latin1'，
-            'classpath'：cpW，
-            'authkey'：'IOM_Prod_Grid1'
-            }
-      ```
+        ```python
+        winiomlinux = {'java'   : r'C:\Program Files (x86)\Java\jre7\bin\java',
+              'iomhost'   : 'server.domain.address.com',
+              'iomport'   : 8597,
+              'encoding'  : 'latin1',
+              'classpath' : cpW,
+              'authkey'   : 'IOM_Prod_Grid1'
+              }
+        ```
       ** java ** - 与本地Windows配置一样
       ** iomhost ** - （必需）可解析的主机名或IOM Linux服务器的IP地址。
       ** iomport ** - （必需）对象spawner侦听工作区服务器连接的端口。
       `iomhost address`和`iomport number`可以通过提交下面SAS语得到。
-      ```SAS
-      proc iomoperate
-        URI = 'IOM：//metadataserver.com：8564;桥; USER = my_user，PASS = MY_PASS';
-        list DEFINED FILTER ='Workspace';
-      quit;
-      ＃ metadataserver地址可以通过下面的方式找到：
-          单击工具 - >单击连接 - >在SAS EG中的配置文件
-      ```
+        ```sas
+        proc iomoperate
+          uri='iom://metadataserver.com:8564;Bridge;USER=my_user,PASS=my_pass';
+          list DEFINED FILTER='Workspace';
+        quit;
+        # metadataserver address can be found by:
+            click Tools -> click Connections -> Profiles in SAS EG
+        ```
       **编码** - 与本地Windows配置一样
 
       ** classpath ** - 与本地Windows配置一样
