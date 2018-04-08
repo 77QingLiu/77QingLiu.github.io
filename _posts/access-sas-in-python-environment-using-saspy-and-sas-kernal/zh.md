@@ -1,11 +1,11 @@
 在2017年初，[SAS官方](https://communities.sas.com/t5/Base-SAS-Programming/Announcing-SASPy-programming-SAS-from-Python/td-p/343050)发布了[SASPy ](https://github.com/sassoftware/saspy)从[Github上的SAS](https://github.com/sassoftware)。 SASPy是一个Python包，通过这个包，可以在Python环境中直接运行SAS代码。这对于那些对SAS和开源软件集成感兴趣的用户来说，这是一大进步。
 
 根据我的理解，SASPy将python对象和方法转换为SAS代码，将转换后的SAS代码发送到SAS 9.4并执行，然后将结果返回给Python环境。
-因此，想要使用这个包，你必须有本地或远程安装SAS软件，并且需要**SAS Base**，所以还是要购买SAS软件。
+因此，想要使用这个包，你必须有本地或远程安装SAS的软件，并且需要**SAS Base**权限，这意味着需要购买SAS软件。
 
-想要在Python中连接SAS，不同的系统下有不同的连接方法，这里我主要描述在**Windows客户端**上通过使用**IOM方法**进行连接的两种方法：
-* **Windows环境中的本地SAS**
-* **Linux环境下([SAS Grid Manager](https://www.sas.com/en_us/software/foundation/grid-manager.html)中的远程SAS)**
+想要在Python中连接SAS，不同的系统下有不同的连接方法，这里我主要描述在**Windows客户端**上通过使用**IOM方法**连接SAS的两种方法：
+* **连接Windows环境中的本地SAS**
+* **连接Linux环境下([SAS Grid Manager](https://www.sas.com/en_us/software/foundation/grid-manager.html)中的远程SAS**
 
 ## 前提配置
 * Python3或更高版本。
@@ -34,18 +34,18 @@ SASPy支持连接到Unix，大型机和Windows上的SAS。也可以连接到本�
 这两种方法都使用[IOM连接](https://sassoftware.github.io/saspy/troubleshooting.html#iom)
 
 ###### 找到配置文件
-名为`sascfg.py`的配置文件位于SASPy软件包所在的位置。
+首先需要找到配置文件，名为`sascfg.py`的配置文件内置在SASPy内。
 对于Anaconda安装，配置通常位于`Continuum\anaconda3\Lib\site-packages\saspy`中。
 也可以通过`import saspy`找到这个包。然后，只需提交`saspy.SAScfg`。 Python会告诉你它在哪里找到模块。
 
 ###### 复制sascfg_personal.py
-`saspy.cfg`文件位于saspy repo中，仅仅作为示例配置文件进行更新，或者进行替换。在更新SASPy之后，文件可能会丢失。为了保险起见，复制`sascfg.py`并重命名为`sascfg_personal.py`。 SASPy总是会首先尝试导入`sascfg_personal.py`，并且只有在失败时才会尝试导入sascfg.py。
+`saspy.cfg`文件内置在saspy内，但是它仅仅作为示例配置文件。在更新SASPy之后，文件可能会丢失。为了保险起见，复制`sascfg.py`并重命名为`sascfg_personal.py`。 SASPy总是会首先尝试导入`sascfg_personal.py`，并且只有在失败时才会尝试导入sascfg.py。
 
 ###### 设置sascfg_personal.py
-1. 只包含两个SAS_config_names'SAS_config_names = ['winiomlinux'，'winlocal']`，代表了两种方法。
+1. 只包含两个SAS_config_names = `['winiomlinux'，'winlocal']`，代表了两种方法。
   - 用于本地Windows连接的`winlocal`
   - 用于远程Linux连接的`winiomlinux`
-2. 设置CLASSPATH以访问SAS Java IOM客户机JAR文件。总共五个Java JAR文件 - 可以从现有SAS安装中获得四(4)个JAR文件，以及一个随SASPy包一起提供的JAR文件：saspyiom.jar。必须在CLASSPATH环境变量中提供这五个JAR文件(完全限定路径)。在sascfg.py文件中可以以非常简单的方式完成，如下所示：
+2. 设置CLASSPATH以访问SAS Java IOM客户机JAR文件。总共五个Java JAR文件， 可以从SAS安装中获得四(4)个JAR文件，还有一个随SASPy包一起提供：saspyiom.jar。必须在CLASSPATH环境变量中提供这五个JAR文件(**必须**)。在sascfg.py文件中可以以非常简单的方式完成，如下所示：
 ```python
 # Four SAS installation JAR files
 cpW  =  r"C:\Program Files\SASHome\SASDeploymentManager\9.4\products\deploywiz__94420__prt__xx__sp0__1\deploywiz\sas.svc.connection.jar"
@@ -57,6 +57,7 @@ cpW += r";C:\Users\qing\AppData\Local\Continuum\anaconda3\Lib\site-packages\sasp
 ```
 
 3. 为本地和远程连接设置不同的参数
+  两种连接方法，根据自身的需求选择合适的连接方法
   - *访问本地Windows SAS*
   ```python
   winlocal = {'java'      : r'C:\Program Files (x86)\Java\jre7\bin\java',
@@ -97,7 +98,7 @@ cpW += r";C:\Users\qing\AppData\Local\Continuum\anaconda3\Lib\site-packages\sasp
   click Tools -> click Connections -> Profiles in SAS EG
   ```
 
-  **编码** - 与本地Windows配置一样
+  **encoding** - 与本地Windows配置一样
 
   **classpath** - 与本地Windows配置一样
 
