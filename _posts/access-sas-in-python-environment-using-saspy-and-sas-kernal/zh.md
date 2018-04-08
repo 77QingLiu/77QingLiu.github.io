@@ -64,11 +64,11 @@ cpW += r";C:\Users\qing\AppData\Local\Continuum\anaconda3\Lib\site-packages\sasp
         'classpath' : cpW
         }
   ```
-    ** java ** - (必需)要使用的Java可执行文件的路径。在Windows命令行内输入java，可以找到java的可执行文件的路径。
+  ** java ** - (必需)要使用的Java可执行文件的路径。在Windows命令行内输入java，可以找到java的可执行文件的路径。
 
-      ** encoding ** - Python内的编码值，它跟要连接的IOM服务器的SAS编码一致。 WLATIN1是在Windows上运行SAS的默认编码。映射到Python内的编码值为：windows-1252。
+  ** encoding ** - Python内的编码值，它跟要连接的IOM服务器的SAS编码一致。 WLATIN1是在Windows上运行SAS的默认编码。映射到Python内的编码值为：windows-1252。
 
-      ** classpath ** - 上一步中指定的五个JAR文件
+  ** classpath ** - 上一步中指定的五个JAR文件
 
   - *访问远程Linux SAS。*
   ```python
@@ -80,28 +80,28 @@ cpW += r";C:\Users\qing\AppData\Local\Continuum\anaconda3\Lib\site-packages\sasp
               'authkey'   : 'IOM_Prod_Grid1'
               }
   ```
-      ** java ** - 与本地Windows配置一样
-      ** iomhost ** - （必需）可解析的主机名或IOM Linux服务器的IP地址。
-      ** iomport ** - （必需）对象spawner侦听工作区服务器连接的端口。
-      `iomhost address`和`iomport number`可以通过提交下面SAS语得到。
-      ```sas
-        proc iomoperate
-          uri='iom://metadataserver.com:8564;Bridge;USER=my_user,PASS=my_pass';
-          list DEFINED FILTER='Workspace';
-        quit;
-        # metadataserver address can be found by:
-            click Tools -> click Connections -> Profiles in SAS EG
-      ```
-      **编码** - 与本地Windows配置一样
+  ** java ** - 与本地Windows配置一样
+  ** iomhost ** - （必需）可解析的主机名或IOM Linux服务器的IP地址。
+  ** iomport ** - （必需）对象spawner侦听工作区服务器连接的端口。
+  `iomhost address`和`iomport number`可以通过提交下面SAS语得到。
+  ```sas
+  proc iomoperate
+      uri='iom://metadataserver.com:8564;Bridge;USER=my_user,PASS=my_pass';
+      list DEFINED FILTER='Workspace';
+  quit;
+  # metadataserver address can be found by:
+  click Tools -> click Connections -> Profiles in SAS EG
+  ```
+  **编码** - 与本地Windows配置一样
 
-      ** classpath ** - 与本地Windows配置一样
+  ** classpath ** - 与本地Windows配置一样
 
-      ** authkey ** - 用户名和密码。
+  ** authkey ** - 用户名和密码。
 
-      > IOM访问方法支持从用户主目录中的authinfo文件获取所需的用户/密码，而不是提示用户/密码输入。在Windows上，它的名字是_authinfo。 authinfo文件中行的格式如下。
-      第一个值是您为authkey指定的authkey值。接下来是'用户'键，后面是值（用户ID），然后是'密码'键，后面跟着它的值（用户的密码）。注意该文件有权限。在Windows上，这个文件应锁定在只有所有者可以读写的位置。
-      例如，用户Bob的主目录中的authinfo文件的密码为BobsPW1将在其中包含一行，如下所示：
-      `IOM_Prod_Grid1用户Bob密码BobsPW1`
+  > IOM访问方法支持从用户主目录中的authinfo文件获取所需的用户/密码，而不是提示用户/密码输入。在Windows上，它的名字是_authinfo。 authinfo文件中行的格式如下。
+  第一个值是您为authkey指定的authkey值。接下来是'用户'键，后面是值（用户ID），然后是'密码'键，后面跟着它的值（用户的密码）。注意该文件有权限。在Windows上，这个文件应锁定在只有所有者可以读写的位置。
+  例如，用户Bob的主目录中的authinfo文件的密码为BobsPW1将在其中包含一行，如下所示：
+  `IOM_Prod_Grid1用户Bob密码BobsPW1`
 
 
 ## 开始
