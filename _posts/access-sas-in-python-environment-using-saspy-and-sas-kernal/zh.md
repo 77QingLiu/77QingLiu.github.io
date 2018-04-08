@@ -70,8 +70,8 @@ cpW += r";C:\Users\qing\AppData\Local\Continuum\anaconda3\Lib\site-packages\sasp
 
       ** classpath ** - 上一步中指定的五个JAR文件
 
-     - *访问远程Linux SAS。*
-        ```python
+  - *访问远程Linux SAS。*
+  ```python
         winiomlinux = {'java'   : r'C:\Program Files (x86)\Java\jre7\bin\java',
               'iomhost'   : 'server.domain.address.com',
               'iomport'   : 8597,
@@ -79,19 +79,19 @@ cpW += r";C:\Users\qing\AppData\Local\Continuum\anaconda3\Lib\site-packages\sasp
               'classpath' : cpW,
               'authkey'   : 'IOM_Prod_Grid1'
               }
-        ```
+  ```
       ** java ** - 与本地Windows配置一样
       ** iomhost ** - （必需）可解析的主机名或IOM Linux服务器的IP地址。
       ** iomport ** - （必需）对象spawner侦听工作区服务器连接的端口。
       `iomhost address`和`iomport number`可以通过提交下面SAS语得到。
-        ```sas
+      ```sas
         proc iomoperate
           uri='iom://metadataserver.com:8564;Bridge;USER=my_user,PASS=my_pass';
           list DEFINED FILTER='Workspace';
         quit;
         # metadataserver address can be found by:
             click Tools -> click Connections -> Profiles in SAS EG
-        ```
+      ```
       **编码** - 与本地Windows配置一样
 
       ** classpath ** - 与本地Windows配置一样
