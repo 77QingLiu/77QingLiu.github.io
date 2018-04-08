@@ -79,7 +79,7 @@ cpW += r";C:\Users\qing\AppData\Local\Continuum\anaconda3\Lib\site-packages\sasp
               'authkey'   : 'IOM_Prod_Grid1'
               }
   ```
-  **java** - 与本地Windows配置一样
+  **java** - 与本地Windows配置相同
   **iomhost** - （必需）可解析的主机名或IOM Linux服务器的IP地址。
   **iomport** - （必需）对象spawner侦听工作区服务器连接的端口。
   `iomhost address`和`iomport number`可以通过提交下面SAS语得到。
@@ -91,8 +91,8 @@ cpW += r";C:\Users\qing\AppData\Local\Continuum\anaconda3\Lib\site-packages\sasp
   # metadataserver address can be found by:
   click Tools -> click Connections -> Profiles in SAS EG
   ```
-  **encoding** - 与本地Windows配置一样
-  **classpath** - 与本地Windows配置一样
+  **encoding** - 与本地Windows配置相同
+  **classpath** - 与本地Windows配置相同
   **authkey** - 用户名和密码。
 
   > IOM访问方法支持从用户主目录中的authinfo文件获取所需的用户/密码，而不是提示用户/密码输入。在Windows上，它的名字是_authinfo。 authinfo文件中行的格式如下。
