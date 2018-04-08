@@ -68,7 +68,9 @@ To avoid file lose, simply copy the `sascfg.py` and rename to `sascfg_personal.p
             }
       ```
       **java** - (Required) The path to the Java executable to use. On Windows, you might be able to simply enter java. If that is not successful, enter encoding - the fully qualified path.
+
       **encoding** - This is the Python encoding value that matches the SAS session encoding of the IOM server to which you are connecting. WLATIN1 are the default encodings for running SAS on Windows. Those map to Python encoding values: windows-1252.
+
       **classpath** - The five JAR files specified in previous step
 
     - *access remote Linux SAS.*
@@ -82,7 +84,9 @@ To avoid file lose, simply copy the `sascfg.py` and rename to `sascfg_personal.p
             }
       ```
       **java** - same as local Windows
+
       **iomhost** - (Required) The resolvable host name, or IP address to the IOM Linux Server.
+
       **iomport** - (Required) The port that object spawner is listening on for workspace server connections.
       `iomhost address` and `iomport number` can be got with the following SAS statement.
       ```sas
@@ -94,7 +98,9 @@ To avoid file lose, simply copy the `sascfg.py` and rename to `sascfg_personal.p
           click Tools -> click Connections -> Profiles in SAS EG
       ```
       **encoding** - same as local Windows
+
       **classpath** - same as local Windows
+
       **authkey** - The keyword that starts a line in the authinfo file containing user and or password for this connection.
 
       > The IOM access method has support for getting the required user/password from an authinfo file in the user’s home directory instead of prompting for it. on windows, it's name is _authinfo. The format of the line in the authinfo file is as follows.
