@@ -64,6 +64,7 @@ cpW += r";C:\Users\qing\AppData\Local\Continuum\anaconda3\Lib\site-packages\sasp
         'classpath' : cpW
         }
   ```
+
   ** java ** - (必需)要使用的Java可执行文件的路径。在Windows命令行内输入java，可以找到java的可执行文件的路径。
 
   ** encoding ** - Python内的编码值，它跟要连接的IOM服务器的SAS编码一致。 WLATIN1是在Windows上运行SAS的默认编码。映射到Python内的编码值为：windows-1252。
@@ -80,8 +81,11 @@ cpW += r";C:\Users\qing\AppData\Local\Continuum\anaconda3\Lib\site-packages\sasp
               'authkey'   : 'IOM_Prod_Grid1'
               }
   ```
+
   ** java ** - 与本地Windows配置一样
+
   ** iomhost ** - （必需）可解析的主机名或IOM Linux服务器的IP地址。
+
   ** iomport ** - （必需）对象spawner侦听工作区服务器连接的端口。
   `iomhost address`和`iomport number`可以通过提交下面SAS语得到。
   ```sas
@@ -92,6 +96,7 @@ cpW += r";C:\Users\qing\AppData\Local\Continuum\anaconda3\Lib\site-packages\sasp
   # metadataserver address can be found by:
   click Tools -> click Connections -> Profiles in SAS EG
   ```
+
   **编码** - 与本地Windows配置一样
 
   ** classpath ** - 与本地Windows配置一样
