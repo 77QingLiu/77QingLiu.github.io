@@ -1,11 +1,11 @@
 在2017年初，[SAS官方](https://communities.sas.com/t5/Base-SAS-Programming/Announcing-SASPy-programming-SAS-from-Python/td-p/343050)发布了[SASPy ](https://github.com/sassoftware/saspy)从[Github上的SAS](https://github.com/sassoftware)。 SASPy是一个Python包，通过这个包，可以在Python环境中直接运行SAS代码。这对于那些对SAS和开源软件集成感兴趣的用户来说，这是一大进步。
 
 根据我的理解，SASPy将python对象和方法转换为SAS代码，将转换后的SAS代码发送到SAS 9.4并执行，然后将结果返回给Python环境。
-因此，你必须有本地或远程安装SAS软件，并且需要** SAS Base **，所以想要使用SASPy，还是必须购买SAS软件。
+因此，想要使用这个包，你必须有本地或远程安装SAS软件，并且需要**SAS Base**，所以还是要购买SAS软件。
 
-想要在Python中连接SAS，根据不同的系统SASPy中有不同的方法，接下来，我主要描述在**Windows客户端**上通过使用** IOM方法 **进行连接的两种方法：
-* ** Windows环境中的本地SAS **
-* ** Linux环境下([SAS Grid Manager](https://www.sas.com/en_us/software/foundation/grid-manager.html)中的远程SAS)**
+想要在Python中连接SAS，不同的系统下有不同的连接方法，这里我主要描述在**Windows客户端**上通过使用**IOM方法**进行连接的两种方法：
+* **Windows环境中的本地SAS**
+* **Linux环境下([SAS Grid Manager](https://www.sas.com/en_us/software/foundation/grid-manager.html)中的远程SAS)**
 
 ## 前提配置
 * Python3或更高版本。
@@ -28,7 +28,7 @@ conda安装
 ## 设置SASpy
 #### 配置
 SASPy支持连接到Unix，大型机和Windows上的SAS。也可以连接到本地或远程SAS。 **不同的环境有不同的设置**，在配置之前，先确定访问类型。本文将解释两种在Windows环境下的访问方法：
-1. 连接**本地Windows SAS **
+1. 连接**本地Windows SAS**
 2. 连接**远程Linux SAS(SAS metadataserver)**
 
 这两种方法都使用[IOM连接](https://sassoftware.github.io/saspy/troubleshooting.html#iom)
@@ -57,7 +57,7 @@ cpW += r";C:\Users\qing\AppData\Local\Continuum\anaconda3\Lib\site-packages\sasp
 ```
 
 3. 为本地和远程连接设置不同的参数
-  - *访问本地Windows SAS。*
+  - *访问本地Windows SAS*
   ```python
   winlocal = {'java'      : r'C:\Program Files (x86)\Java\jre7\bin\java',
         'encoding'  : 'windows-1252',
@@ -65,13 +65,13 @@ cpW += r";C:\Users\qing\AppData\Local\Continuum\anaconda3\Lib\site-packages\sasp
         }
   ```
 
-  ** java ** - (必需)要使用的Java可执行文件的路径。在Windows命令行内输入java，可以找到java的可执行文件的路径。
+  **java** - (必需)要使用的Java可执行文件的路径。在Windows命令行内输入java，可以找到java的可执行文件的路径。
 
-  ** encoding ** - Python内的编码值，它跟要连接的IOM服务器的SAS编码一致。 WLATIN1是在Windows上运行SAS的默认编码。映射到Python内的编码值为：windows-1252。
+  **encoding** - Python内的编码值，它跟要连接的IOM服务器的SAS编码一致。 WLATIN1是在Windows上运行SAS的默认编码。映射到Python内的编码值为：windows-1252。
 
-  ** classpath ** - 上一步中指定的五个JAR文件
+  **classpath** - 上一步中指定的五个JAR文件
 
-  - *访问远程Linux SAS。*
+  - *访问远程Linux SAS*
   ```python
         winiomlinux = {'java'   : r'C:\Program Files (x86)\Java\jre7\bin\java',
               'iomhost'   : 'server.domain.address.com',
@@ -82,11 +82,11 @@ cpW += r";C:\Users\qing\AppData\Local\Continuum\anaconda3\Lib\site-packages\sasp
               }
   ```
 
-  ** java ** - 与本地Windows配置一样
+  **java** - 与本地Windows配置一样
 
-  ** iomhost ** - （必需）可解析的主机名或IOM Linux服务器的IP地址。
+  **iomhost** - （必需）可解析的主机名或IOM Linux服务器的IP地址。
 
-  ** iomport ** - （必需）对象spawner侦听工作区服务器连接的端口。
+  **iomport** - （必需）对象spawner侦听工作区服务器连接的端口。
   `iomhost address`和`iomport number`可以通过提交下面SAS语得到。
   ```sas
   proc iomoperate
@@ -99,13 +99,14 @@ cpW += r";C:\Users\qing\AppData\Local\Continuum\anaconda3\Lib\site-packages\sasp
 
   **编码** - 与本地Windows配置一样
 
-  ** classpath ** - 与本地Windows配置一样
+  **classpath** - 与本地Windows配置一样
 
-  ** authkey ** - 用户名和密码。
+  **authkey** - 用户名和密码。
 
   > IOM访问方法支持从用户主目录中的authinfo文件获取所需的用户/密码，而不是提示用户/密码输入。在Windows上，它的名字是_authinfo。 authinfo文件中行的格式如下。
   第一个值是您为authkey指定的authkey值。接下来是'用户'键，后面是值（用户ID），然后是'密码'键，后面跟着它的值（用户的密码）。注意该文件有权限。在Windows上，这个文件应锁定在只有所有者可以读写的位置。
   例如，用户Bob的主目录中的authinfo文件的密码为BobsPW1将在其中包含一行，如下所示：
+
   `IOM_Prod_Grid1用户Bob密码BobsPW1`
 
 
