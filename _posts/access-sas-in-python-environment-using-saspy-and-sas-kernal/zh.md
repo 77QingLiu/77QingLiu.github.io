@@ -115,15 +115,15 @@ from IPython.display import HTML
 ```
 
 #### 启动SAS会话
-下面使用winlocal配置开始一个名为sas的SAS会话。如果忽略cfgname选项，SAS弹出一个窗口，让你输入config信息。
-建立连接并启动SAS会话后，将显示与下面类似的注释。
+下面使用winlocal配置开始一个名为sas的SAS会话。如果忽略cfgname选项，SAS会弹出一个窗口，让你输入config信息。
+建立连接并启动SAS会话后，会跳出与下面类似的注释。
 ![sassession](/img/in-post/access-sas-in-python-environment-using-saspy-and-sas-kernal/sassession.png)
 
 #### 开始数据分析
 有三种方法进行分析：
-1.通过内置SASPy方法。
-2.将SAS数据集转换为Pandas Dataframe，通过pandas进行分析
-3.通过SASPy直接提交SAS代码
+1. 通过内置SASPy方法。
+2. 将SAS数据集转换为Pandas Dataframe，通过pandas进行分析
+3. 通过SASPy直接提交SAS代码
 
 
 ###### 使用SASPy内置方法进行分析
