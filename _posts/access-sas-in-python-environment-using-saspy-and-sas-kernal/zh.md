@@ -145,4 +145,4 @@ from IPython.display import HTML
 ![SASPy_6](/img/in-post/access-sas-in-python-environment-using-saspy-and-sas-kernal/saspy-6.png)
 
 ## 结论
- 更多的文字，参阅该软件包的文档：[saspy](https://sassoftware.github.io/saspy/)
+ SASPy的配置还算比较简单，关键是选择合适的连接类型。由于是开源软件，中间不可避免地会遇到一些小bug，可以参阅该软件包的文档：[saspy](https://sassoftware.github.io/saspy/)或者提交在[GitHub](https://github.com/sassoftware/saspy/issues)上提交issue。
