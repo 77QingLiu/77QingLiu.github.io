@@ -6,6 +6,7 @@
 想要在Python中连接SAS，不同的系统下有不同的连接方法，这里我主要描述在**Windows客户端**上通过使用**IOM方法**连接SAS的两种方法：
 * **连接Windows环境中的本地SAS**
 * **连接Linux环境下([SAS Grid Manager](https://www.sas.com/en_us/software/foundation/grid-manager.html)中的远程SAS**
+更多的方法参见SASPy官方文档
 
 ## 前提配置
 * Python3或更高版本。
@@ -13,7 +14,7 @@
 * 客户端上的Java
 * SAS Integration Technologies客户端的四个JAR文件(可在SAS安装中找到或[在此下载](https://support.sas.com/downloads/package.htm?pid=607))。
 
-## 安装软件包
+## 安装SASPy软件包
 * 在命令行中安装
 ```Python
 # 使用pip
@@ -22,8 +23,8 @@ pip安装saspy
 conda安装
 ```
 * 或下载软件包并安装
-  1. 从[SAS Github](https://github.com/sassoftware/saspy)下载Python软件包，
-  2. 解压压缩包，切换到包文件夹，然后在命令行中执行`python setup.py install`
+  1. 从[SAS Github](https://github.com/sassoftware/saspy)下载Python软件包
+  2. 解压压缩包，切换到包文件夹，然后在命令行中执行`python setup.py install`
 
 ## 设置SASpy
 #### 配置
@@ -56,54 +57,53 @@ cpW += r";C:\Program Files\SASHome\SASDeploymentManager\9.4\products\deploywiz__
 cpW += r";C:\Users\qing\AppData\Local\Continuum\anaconda3\Lib\site-packages\saspy\java\saspyiom.jar"
 ```
 
-3. 为本地和远程连接设置不同的参数
-  两种连接方法，根据自身的需求选择合适的连接方法
-  - *访问本地Windows SAS*
-  ```python
-  winlocal = {'java'      : r'C:\Program Files (x86)\Java\jre7\bin\java',
-        'encoding'  : 'windows-1252',
-        'classpath' : cpW
-        }
-  ```
-  **java** - (必需)要使用的Java可执行文件的路径。在Windows命令行内输入java，可以找到java的可执行文件的路径。
-  **encoding** - Python内的编码值，它跟要连接的IOM服务器的SAS编码一致。 WLATIN1是在Windows上运行SAS的默认编码。映射到Python内的编码值为：windows-1252。
-  **classpath** - 上一步中指定的五个JAR文件
+3. 为本地和远程连接设置不同的参数, 两种连接方法，根据自身的需求选择合适的连接方法
+    - *访问本地Windows SAS*
+      ```python
+      winlocal = {'java'      : r'C:\Program Files (x86)\Java\jre7\bin\java',
+            'encoding'  : 'windows-1252',
+            'classpath' : cpW
+            }
+      ```
+      * **java** - (必需)要使用的Java可执行文件的路径。在Windows命令行内输入java，可以找到java的可执行文件的路径。
 
-  - *访问远程Linux SAS*
-  ```python
-        winiomlinux = {'java'   : r'C:\Program Files (x86)\Java\jre7\bin\java',
-              'iomhost'   : 'server.domain.address.com',
-              'iomport'   : 8597,
-              'encoding'  : 'latin1',
-              'classpath' : cpW,
-              'authkey'   : 'IOM_Prod_Grid1'
-              }
-  ```
-  **java** - 与本地Windows配置相同
-  **iomhost** - （必需）可解析的主机名或IOM Linux服务器的IP地址。
-  **iomport** - （必需）对象spawner侦听工作区服务器连接的端口。
-  `iomhost address`和`iomport number`可以通过提交下面SAS语得到。
-  ```sas
-  proc iomoperate
-      uri='iom://metadataserver.com:8564;Bridge;USER=my_user,PASS=my_pass';
-      list DEFINED FILTER='Workspace';
-  quit;
-  # metadataserver address can be found by:
-  click Tools -> click Connections -> Profiles in SAS EG
-  ```
-  **encoding** - 与本地Windows配置相同
-  **classpath** - 与本地Windows配置相同
-  **authkey** - 用户名和密码。
+      * **encoding** - Python内的编码值，它跟要连接的IOM服务器的SAS编码一致。 * WLATIN1是在Windows上运行SAS的默认编码。映射到Python内的编码值为：windows-1252。
 
-  > IOM访问方法支持从用户主目录中的authinfo文件获取所需的用户/密码，而不是提示用户/密码输入。在Windows上，它的名字是_authinfo。 authinfo文件中行的格式如下。
-  第一个值是您为authkey指定的authkey值。接下来是'用户'键，后面是值（用户ID），然后是'密码'键，后面跟着它的值（用户的密码）。注意该文件有权限。在Windows上，这个文件应锁定在只有所有者可以读写的位置。
-  例如，用户Bob的主目录中的authinfo文件的密码为BobsPW1将在其中包含一行，如下所示：
+      * **classpath** - 上一步中指定的五个JAR文件
 
-  `IOM_Prod_Grid1用户Bob密码BobsPW1`
+    - *访问远程Linux SAS*
+      ```python
+          winiomlinux = {'java'   : r'C:\Program Files (x86)\Java\jre7\bin\java',
+                'iomhost'   : 'server.domain.address.com',
+                'iomport'   : 8597,
+                'encoding'  : 'latin1',
+                'classpath' : cpW,
+                'authkey'   : 'IOM_Prod_Grid1'
+                }
+      ```
+      - **java** - 与本地Windows配置相同
+      - **iomhost** - （必需）可解析的主机名或IOM Linux服务器的IP地址。
+      - **iomport** - （必需）对象spawner侦听工作区服务器连接的端口。
+      `iomhost address`和`iomport number`可以通过提交下面SAS语得到。
+    ```sas
+    proc iomoperate
+        uri='iom://metadataserver.com:8564;Bridge;USER=my_user,PASS=my_pass';
+        list DEFINED FILTER='Workspace';
+    quit;
+    # metadataserver address can be found by:
+    click Tools -> click Connections -> Profiles in SAS EG
+    ```
+      * **encoding** - 与本地Windows配置相同
+      * **classpath** - 与本地Windows配置相同
+      * **authkey** - 用户名和密码。
+      > IOM访问方法支持从用户主目录中的authinfo文件获取所需的用户/密码，而不是提示用户/密码输入。在Windows上，它的名字是_authinfo。 authinfo文件中行的格式如下。
+      第一个值为authkey指定的authkey值。接下来是'用户'键，后面是值（用户ID），然后是'密码'键，后面跟着它的值（用户的密码）。注意该文件有权限。在Windows上，这个文件应锁定在只有所有者可以读写的位置。
+      例如，用户Bob的主目录中的authinfo文件的密码为BobsPW1将在其中包含一行，例如：
+      `IOM_Prod_Grid1用户Bob密码BobsPW1`
 
 
 ## 开始
-一旦完成安装和配置，就可以在Python中直接使用这个包。
+费了九牛二虎之力，终于配置好了，可以在Python中直接使用这个包了。
 
 #### 初始化
 ```Python
