@@ -1,4 +1,3 @@
-# Sumarry
 ## 1
 Qing has worked for 3 years in the pharmaceutical industry as both statistical analyst and statistical programmer.
 he is now working as Statistical Analyst in the Department of Statistics at Lilly China Drug Development and Medical Affairs Center (LCDDMAC).
