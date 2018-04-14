@@ -8,6 +8,7 @@ header-img:   "img/in-post/machine-learning-in-action-knn/knn.png"
 header-mask:  0.3
 catalog:      true
 multilingual: true
+mathjax: true
 tags:
     - Machine Learning
     - Python

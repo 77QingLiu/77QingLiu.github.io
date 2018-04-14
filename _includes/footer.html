@@ -164,6 +164,11 @@
     })
 </script>
 
+{% if page.mathjax %}
+<script type="text/javascript" async
+  src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+{% endif %}
 
 <!-- Google Analytics -->
 {% if site.ga_track_id %}
@@ -207,7 +212,7 @@
 <script type="text/javascript">
     function generateCatalog (selector) {
 
-        // interop with multilangual 
+        // interop with multilangual
         if ({{ page.multilingual }}) {
             _containerSelector = 'div.post-container.active'
         } else {
@@ -297,7 +302,7 @@
             $en.style.display = "none";
             $en.classList.remove("active");
         }
-        // interop with catalog 
+        // interop with catalog
         if ("{{ page.catalog }}") generateCatalog(".catalog-body");
     }
 

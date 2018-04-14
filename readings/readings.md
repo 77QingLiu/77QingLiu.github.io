@@ -16,13 +16,14 @@
 
 ### 线性代数
   * [线性代数及其应用 ：（Linear Algebra and Its Applications）](https://book.douban.com/subject/1425950/)
-  
+
 
 ### 数据分析
   * [Python Data Science Handbook](https://book.douban.com/subject/26600459/)
 
 ### 机器学习
   * [机器学习（周志华）](https://book.douban.com/subject/26708119/)
+  * [统计学习方法（李航）](https://book.douban.com/subject/10590856/)
 
 
 ------

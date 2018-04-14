@@ -1,4 +1,4 @@
-<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+
 ## KNN 概述
 
 `这篇文章旨在介绍简单而强大的机器学习算法：k-近邻（kNN, k-NearestNeighbor）`
@@ -99,6 +99,7 @@ def _loadData(self):
 
 * 归一化数据 （归一化是一个让权重变为统一的过程，更多细节请参考： [zhihu](https://www.zhihu.com/question/19951858
 )
+
 | 序号 | 玩视频游戏所耗时间百分比 | 每年获得的飞行常客里程数  | 每周消费的冰淇淋公升数  | 样本分类 |
 | ------------- |:-------------:| -----:| -----:| -----:|
 | 1 | 0.8 | 400     | 0.5 | 1 |
@@ -255,6 +256,10 @@ class kNN_scilearn:
 
     def fitModel(self):
         X_train, X_test, Y_train, Y_test = self._loadData()
+        # MinMax标准化
+        min_max_scaler = preprocessing.MinMaxScaler()
+        X_train = min_max_scaler.fit_transform(X_train)
+        X_test = min_max_scaler.fit_transform(X_test)
         # instantiate learning model (k = 3)
         knn = KNeighborsClassifier(n_neighbors=3)
         # fitting the model
