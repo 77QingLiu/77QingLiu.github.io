@@ -4,7 +4,7 @@ title:    "Access SAS in Python Environment with SASPy"
 date:     "2018-04-07 23:20"
 subtitle: ""
 author:       "Qing"
-header-img:   "img/in-post/access-sas-in-python-environment-using-saspy-and-sas-kernal/connection.png"
+header-img:   //p7ffgka2w.bkt.clouddn.com/connection.png
 header-mask:  0.3
 catalog:      true
 multilingual: true
