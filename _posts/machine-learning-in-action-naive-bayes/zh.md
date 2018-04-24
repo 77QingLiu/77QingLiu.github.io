@@ -166,6 +166,8 @@ print('Number of mislabeled points out of a total {0} points : {1}'.format(len(y
 \\[\hat{P}(好瓜=是) = \frac{8+1}{17+2}\approx0.474\\]
 \\[\hat{P}(好瓜=否) = \frac{9+1}{17+2}\approx0.526\\]
 
+文章的代码都在[machine_learning_in_action](https://github.com/77QingLiu/machine_learning_in_action)这个仓库里面。
+
 ## 参考文档
 [机器学习-周志华](https://book.douban.com/subject/26708119/)     
 [第4章 基于概率论的分类方法：朴素贝叶斯](https://github.com/apachecn/MachineLearning/blob/master/docs/4.%E6%9C%B4%E7%B4%A0%E8%B4%9D%E5%8F%B6%E6%96%AF.md)     
