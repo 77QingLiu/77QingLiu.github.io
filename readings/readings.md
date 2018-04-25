@@ -24,7 +24,7 @@
 ### 机器学习
   * [机器学习（周志华）](https://book.douban.com/subject/26708119/)
   * [统计学习方法（李航）](https://book.douban.com/subject/10590856/)
-
+  * [机器学习实战](https://book.douban.com/subject/24703171/)
 
 ------
 # 计算机科学

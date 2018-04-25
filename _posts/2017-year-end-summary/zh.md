@@ -2,7 +2,7 @@
 
 
 # 回顾
-2017，我所有的时间精力都花在准备研究生考试、学习计算机科学上，而工作呢？则无暇顾及，但是我会觉得遗憾吗？
+2017，我所有的时间精力都花在准备研究生考试、学习数据科学、计算机科学上。
 
 #### 数据科学：
 * 学习[Python](https://www.python.org/)中的数据科学软件包：[Pandas](https://pandas.pydata.org/)，[Numpy](http：// www。 numpy.org/)，[Matplotlib](https://matplotlib.org/)
