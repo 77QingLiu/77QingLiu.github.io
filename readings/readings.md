@@ -16,10 +16,12 @@
 
 ### 线性代数
   * [线性代数及其应用 ：（Linear Algebra and Its Applications）](https://book.douban.com/subject/1425950/)
+  * [线性代数 (Gilbert Strang)](http://open.163.com/special/opencourse/daishu.html)
 
 
 ### 数据分析
   * [Python Data Science Handbook](https://book.douban.com/subject/26600459/)
+  * [Python for Data Analysis](https://book.douban.com/subject/10760444/)
 
 ### 机器学习
   * [机器学习（周志华）](https://book.douban.com/subject/26708119/)
@@ -36,10 +38,11 @@
   * [The C Programming Language](https://book.douban.com/subject/1236999/)
 
 2. Python
-  * [ A Byte of Python : 简明 Python 教程](https://book.douban.com/subject/5948760/)
+  * [A Byte of Python : 简明 Python 教程](https://book.douban.com/subject/5948760/)
   * [Python学习手册（Learning Python 第4版）](https://book.douban.com/subject/6049132/)
   * [Python Cookbook : （第2版）](https://book.douban.com/subject/4828875/)
   * [Fluent Python](https://book.douban.com/subject/26278021/)
+  * [The Hitchhiker's Guide to Python](http://docs.python-guide.org/en/latest/)
 
 
 ### 数据结构与算法
