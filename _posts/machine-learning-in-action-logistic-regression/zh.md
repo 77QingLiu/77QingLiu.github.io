@@ -115,12 +115,13 @@ df.head()
 ```
 
 重新编码数据
-> 重编码问题参考[这篇文章](https://ask.hellobi.com/blog/DataMiner/4897)
 ```python
 # re-encoding
 columns = ['色泽', '根蒂', '敲声', '纹理', '脐部', '触感']
 df_dummy = pd.get_dummies(df, columns=columns)
 ```
+> 重编码问题参考[这篇文章](https://ask.hellobi.com/blog/DataMiner/4897)
+
 
 建立模型
 ```python
