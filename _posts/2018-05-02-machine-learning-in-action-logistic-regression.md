@@ -10,8 +10,8 @@ catalog:      true
 multilingual: true
 mathjax: true
 tags:
-    - machine learning
-    - python
+    - Machine Learning
+    - Python
 ---
 <!-- Chinese Version -->
 <div class="zh post-container">
