@@ -1,6 +1,6 @@
 > A follow up for [my paper in PharmaSUG China 2017](https://www.lexjansen.com/pharmasug-cn/2017/AD/PharmaSUG-China-2017-AD02.pdf)
 
-SAS提供了很多方法来执行表查找操作，例如使用`if-then`语句，`format`语句，`merge`语句，甚至是`PROC SQL`。这里介绍一种通过哈希实现的表查询方法，不仅快速，而且简洁方便。
+Table lookup, 又称表查找，是一种常用的数据整合方法。SAS内提供了很多方法来执行表查找操作，例如使用`if-then`语句，`format`语句，`merge`语句，甚至是`PROC SQL`。这里介绍一种通过哈希实现的表查询方法，不仅快速，而且简洁方便。
 
 ## 什么是表查找？
 熟悉数据分析或者数据库的人应该不会陌生，所谓的表查找通常指的是通过一定的键组合，在另外的数据表里面查找对应的值。   
@@ -122,7 +122,7 @@ run;
 这样一来，复杂的哈希语句就被嵌套在一个SAS自定义函数当中，使用者只需简单的调用这个函数，便可实现表查找操作。    
 
 
-#### 下表给出了在`PROC FCMR`中调用`HAHS`的基本语法
+#### 下表给出了在`PROC FCMP`中调用`HAHS`的基本语法
 
 Method | Syntax | Description
 ------ | ------ | -----------
@@ -137,14 +137,16 @@ NUM_ITEMS| rc = object. NUM_ITEMS()|  Return the number of items in hash object
 ADD | rc = object.ADD(key: value1, key: value n) | Add data with associated key to hash object
 REMOVE | rc = object.REMOVE(key: value1, key: value n) | Remove data with associated key to hash object
 
-> 为什么要使用哈希表实现的自定义函数?
+具体的使用方法可以参阅这篇文章:[Hashing in PROC FCMP to Enhance Your Productivity](http://www.lexjansen.com/wuss/2013/141_Paper.pdf)   
+
+#### 为什么要使用哈希表实现的自定义函数?
 
 原因很简单，因为这种用法很简单、高效！
 
 # 实践
 前面讲了这么多原理，下面讲一个有意思地应用。通过自定义哈希表函数，实现一些平时在SAS中不太容易实现的操作。
 
-#### 给定字符与每个字符对应的数值，此数值存放在表CharNum中。
+#### 下表(CharNum)存放着26个字母和每个字符对应的数值。
 
 char | val
 ---  | ---
@@ -155,7 +157,7 @@ d    | 4
 ...  | ...
 z    | 26
 
-给定一个字符串，求字符串对应的数值的总和？例如，字符串'abc'对应的数值为：1 + 2 + 3 = 6
+给定一个26个字母组成的字符串，如何求字符串对应的数值的总和？例如，字符串'abc'对应的数值为：1(a) + 2(b) + 3(c) = 6
 
 ### SAS实现
 
@@ -177,8 +179,9 @@ proc fcmp outlib=width.functions.GetNum;
     endsub;
 run;
 ```
+这个函数用来得到每个字母对应的数值。
 
-在定义好函数之后是，直接调用这个函数便可得到字符串值。
+在定义好函数之后是，通过直接调用这个函数，便可得到字符串值。
 ```sas
 data _null_;
     string = 'abc';
@@ -192,7 +195,7 @@ run;
 >> 6
 ```
 
-你甚至可以将循环嵌入自定义函数中，这样使用起来更方便
+你甚至可以将循环嵌入自定义函数中，这样在data步内就不需要使用循环便可直接得到结果。
 ```sas
 proc fcmp outlib=width.functions.GetNum;
     function GetNum(char $);
@@ -212,7 +215,7 @@ proc fcmp outlib=width.functions.GetNum;
     endsub;
 run;
 ```
-可以在DATA步中直接调用
+在DATA步中直接调用
 ```sas
 data _null_;
     string = 'abc';
@@ -222,7 +225,8 @@ run;
 >> 6
 ```
 
-因为SAS中缺少一些高级的数据结构，因此想要实现上述功能确实有点绕。下面给出Python中的实现方式，大家可以体会到Python的强大之处。
+因为SAS中缺少一些高级的数据结构，因此上面借助一个哈希函数来解决这个问题。在Python中字典属于一种自带哈希功能的高级数据结构，通过字典可以快速解决上述问题。     
+下面给出Python中的实现方式，大家可以体会到Python的强大之处。
 ```python
 HashTable = {'a':1, 'b':2, ..., 'z':26}
 num = 0
