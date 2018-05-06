@@ -1,6 +1,6 @@
 > A follow up for [my paper in PharmaSUG China 2017](https://www.lexjansen.com/pharmasug-cn/2017/AD/PharmaSUG-China-2017-AD02.pdf)
 
-Table lookup, 又称表查找，是一种常用的数据整合方法。SAS内提供了很多方法来执行表查找操作，例如使用`if-then`语句，`format`语句，`merge`语句，甚至是`PROC SQL`。这里介绍一种通过哈希实现的表查询方法，不仅快速，而且简洁方便。
+Table lookup, 又称表查找，是一种常用的数据整合方法。SAS内提供了很多方法来执行表查找操作，例如使用`if-then`语句，`format`语句，`merge`语句，`PROC SQL`等等。这里介绍一种通过哈希实现的表查询方法，不仅快速，而且简洁方便。
 
 ## 什么是表查找？
 熟悉数据分析或者数据库的人应该不会陌生，所谓的表查找通常指的是通过一定的键组合，在另外的数据表里面查找对应的值。   
