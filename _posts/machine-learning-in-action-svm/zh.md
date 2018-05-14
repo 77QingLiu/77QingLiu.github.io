@@ -120,7 +120,7 @@ C = \alpha_i + \mu_i
 然后将上式回代，我们求此问题的对偶问题:
 \\[\min_\alpha\frac{1}{2}\sum_{i=1}^N\sum_{j=1}^N\alpha_i\alpha_jy_iy_j(x_i\cdot x_j) - \sum_{i=1}^N\alpha_i\tag{5}\\]subject to \\[\sum_{i=1}^N\alpha_iy_i = 0\\]\\[ 0 \le \alpha_i \le C, i=1,2,...,N\\]
 
-可见，软间隔SVM的目标函数形式同硬间隔的形式相同，唯一不同的就在于$$\alpha_i的范围。
+可见，软间隔SVM的目标函数形式同硬间隔的形式相同，唯一不同的就在于$$\alpha_i$$的范围。
 
 
 ## 参考文档
