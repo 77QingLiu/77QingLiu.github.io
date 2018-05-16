@@ -10,7 +10,7 @@ Hello! 我叫刘青，这个Blog记录我的学习过程和感悟。
 * [Clover - 为Windows Explorer 资源管理器增加类似谷歌 Chrome 浏览器的多标签页功能。](http://ejie.me/)
 * Shadowsocks
 * Sublime Text 3
-    packages
+    * packages
     * A File Icon
     * Alignment
     * BracketHighlighter
@@ -22,7 +22,7 @@ Hello! 我叫刘青，这个Blog记录我的学习过程和感悟。
 * youdao dictionary
 * Anki
 * Atom
-    packages
+    * packages
     * [Hydrogen](https://atom.io/packages/Hydrogen)
     * [MagicPython](https://atom.io/packages/MagicPython)
     * [Aligner](https://atom.io/packages/aligner)
@@ -38,7 +38,7 @@ Hello! 我叫刘青，这个Blog记录我的学习过程和感悟。
     * [Platformio-ide-terminal](https://atom.io/packages/platformio-ide-terminal)
     * [Tool-bar](https://atom.io/packages/tool-bar)
     * [Tool-bar-markdown-writer](https://atom.io/packages/tool-bar-markdown-writer)
-    theme
+    * theme
     * UI: Atom Light; Syntax: GitHub Atom Light
 * 7-zip
 * filetypesman
