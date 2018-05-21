@@ -28,6 +28,9 @@
   * [统计学习方法（李航）](https://book.douban.com/subject/10590856/)
   * [机器学习实战](https://book.douban.com/subject/24703171/)
 
+### 信用风险
+  * [信用风险评分卡研究](https://book.douban.com/subject/25812550/)
+
 ------
 # 计算机科学
 ### 计算机基础
