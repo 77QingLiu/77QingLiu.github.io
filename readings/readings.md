@@ -11,52 +11,67 @@
 ------
 # 数据科学
 ### 概率论与数理统计
-  * [概率论与数理统计](https://book.douban.com/subject/2201479/)
-  * [统计学完全教程 : （All of Statistics）](https://book.douban.com/subject/2285151/)
+  - [x] [概率论与数理统计](https://book.douban.com/subject/2201479/)
+  - [x] [统计学完全教程 : （All of Statistics）](https://book.douban.com/subject/2285151/)
 
 ### 线性代数
-  * [线性代数及其应用 ：（Linear Algebra and Its Applications）](https://book.douban.com/subject/1425950/)
-  * [线性代数 (Gilbert Strang)](http://open.163.com/special/opencourse/daishu.html)
+  - [x] [线性代数及其应用 ：（Linear Algebra and Its Applications）](https://book.douban.com/subject/1425950/)
+  - [x] [线性代数 (Gilbert Strang)](http://open.163.com/special/opencourse/daishu.html)
 
 
 ### 数据分析
-  * [Python Data Science Handbook](https://book.douban.com/subject/26600459/)
-  * [Python for Data Analysis](https://book.douban.com/subject/10760444/)
+  - [x] [Python Data Science Handbook](https://book.douban.com/subject/26600459/)
+  - [x] [Python for Data Analysis](https://book.douban.com/subject/10760444/)
+
 
 ### 机器学习
-  * [机器学习（周志华）](https://book.douban.com/subject/26708119/)
-  * [统计学习方法（李航）](https://book.douban.com/subject/10590856/)
-  * [机器学习实战](https://book.douban.com/subject/24703171/)
+  - [x] [机器学习（周志华）](https://book.douban.com/subject/26708119/)
+  - [x] [统计学习方法（李航）](https://book.douban.com/subject/10590856/)
+  - [x] [机器学习实战](https://book.douban.com/subject/24703171/)
+  - [ ] [The Element of Statistical Learning](https://book.douban.com/subject/3294335/)
+  - [ ] [Data Mining: Concepts and Techniques](https://book.douban.com/subject/11542972/)
 
 ### 信用风险
-  * [信用风险评分卡研究](https://book.douban.com/subject/25812550/)
+  - [x] [信用风险评分卡研究](https://book.douban.com/subject/25812550/)
+
+### 探索性分析和数据可视化
+  - [ ] [Visualize This](https://link.zhihu.com/?target=http%3A//flowingdata.com) 
+  - [ ] [Exploratory Data Analysis with MATLAB](http://vdisk.weibo.com/s/Ddw3tKvyqR0N)
+
+# 大数据
+### Hadoop
+### Spark
 
 ------
 # 计算机科学
 ### 计算机基础
-* [深入理解计算机系统](https://book.douban.com/subject/1230413/)
+- [x] [深入理解计算机系统](https://book.douban.com/subject/1230413/)
 
 ### 编程语言
-1. C
-  * [The C Programming Language](https://book.douban.com/subject/1236999/)
+##### C
+  - [x] [The C Programming Language](https://book.douban.com/subject/1236999/)
 
-2. Python
-  * [A Byte of Python : 简明 Python 教程](https://book.douban.com/subject/5948760/)
-  * [Python学习手册（Learning Python 第4版）](https://book.douban.com/subject/6049132/)
-  * [Python Cookbook : （第2版）](https://book.douban.com/subject/4828875/)
-  * [Fluent Python](https://book.douban.com/subject/26278021/)
-  * [The Hitchhiker's Guide to Python](http://docs.python-guide.org/en/latest/)
+##### Python
+  - [x] [A Byte of Python : 简明 Python 教程](https://book.douban.com/subject/5948760/)
+  - [x] [Python学习手册（Learning Python 第4版）](https://book.douban.com/subject/6049132/)
+  - [x] [Python Cookbook : （第2版）](https://book.douban.com/subject/4828875/)
+  - [x] [Fluent Python](https://book.douban.com/subject/26278021/)
+  - [x] [The Hitchhiker's Guide to Python](http://docs.python-guide.org/en/latest/)
+
+##### R
+
+##### SQL
 
 
 ### 数据结构与算法
-* [算法（第四版）](https://book.douban.com/subject/19952400/)
-* [剑指Offer](https://book.douban.com/subject/6966465/)
+- [x] [算法（第四版）](https://book.douban.com/subject/19952400/)
+- [x] [剑指Offer](https://book.douban.com/subject/6966465/)
 
 ### 其他
-* [Pro Git](https://book.douban.com/subject/3420144/)
+- [x] [Pro Git](https://book.douban.com/subject/3420144/)
 
 
 ------
 # 人文
 ### 社会科学
-* [人类简史](https://book.douban.com/subject/25985021/)
+- [ ] [人类简史](https://book.douban.com/subject/25985021/)
