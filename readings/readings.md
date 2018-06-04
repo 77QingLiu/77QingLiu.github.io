@@ -63,7 +63,7 @@
   - [R语言学习由浅入深路线图](https://zhuanlan.zhihu.com/p/19771906)
   - [ ] [Learning R](https://www.dropbox.com/s/url2ejm0k5hdzgy/Learning%20R.pdf)
   - [ ] [R in action](https://www.dropbox.com/s/00tr0gkgo766pt5/R%E8%AF%AD%E8%A8%80%E5%AE%9E%E6%88%98%EF%BC%88%E4%B8%AD%E6%96%87%E5%AE%8C%E6%95%B4%E7%89%88%EF%BC%89.pdf)
-  - [R in a Nutshell](https://link.zhihu.com/?target=http%3A//web.udl.es/Biomath/Bioestadistica/R/Manuals/r_in_a_nutshell.pdf)
+  - [ ] [R in a Nutshell](https://link.zhihu.com/?target=http%3A//web.udl.es/Biomath/Bioestadistica/R/Manuals/r_in_a_nutshell.pdf)
   - [ ] [R for Data Science](http://r4ds.had.co.nz)
   - [ ] [R cookbook](https://book.douban.com/subject/6038927/)
   - [ ] 现代统计图形
