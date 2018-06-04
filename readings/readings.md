@@ -59,6 +59,12 @@
   - [x] [The Hitchhiker's Guide to Python](http://docs.python-guide.org/en/latest/)
 
 ##### R
+  - [零基础学习R语言数据分析](https://zhuanlan.zhihu.com/p/21801789)
+  - [ ] [Learning R](https://book.douban.com/subject/24392865/)
+  - [ ] [R in action](https://book.douban.com/subject/24830014/)
+  - [ ] [R cookbook](https://book.douban.com/subject/6038927/)
+  - [ ] 现代统计图形
+  - [ ] R graphics cookbook
 
 ##### SQL
 
