@@ -146,6 +146,7 @@ cos(A,B) = \frac{P(A\cup B)}{\sqrt{P(A)\times P(B)}} = \frac{A\cup B}{\sqrt{sup(
 
 ---
 牛奶和咖啡两种商品的关系可以通过汇总在如下列联表中来考察：
+
 ~|$$milk$$|$$\overline{milk}$$|$$\sum_{row}$$
 -|-|-
 $$coffee$$|$$mc$$|$$\overline{m}c$$|$$c$$
