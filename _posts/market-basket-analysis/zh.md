@@ -202,8 +202,8 @@ SAS发布的[Visual Data Mining and Machine Learning on SAS Viya](https://www.sa
 ![](http://p7ffgka2w.bkt.clouddn.com/18-6-10/28306260.jpg)
 得到如下输出：
 ![](http://p7ffgka2w.bkt.clouddn.com/18-6-10/33626822.jpg)
-是不是特别赞？SAS功能真心强大。
-这一段摘自[](https://blogs.sas.com/content/sgf/2018/01/17/visualizing-the-results-of-a-market-basket-analysis-in-sas-viya/)
+太酷了！SAS功能真心强大。
+这里摘自[Market basket analysis in SAS viya](https://blogs.sas.com/content/sgf/2018/01/17/visualizing-the-results-of-a-market-basket-analysis-in-sas-viya/)（没有高大上的SAS visual analytics，无法亲身测试）。
 
 ## 结论
 关联规则在零售、电商等领域具有比较成熟的应用，其算法也是比较直观容易理解。但在具体应用中，算法产生的关联规则可能并没有实际的意义，或者说是不对的，此时需要结合商业知识以及其他规则评估方法，对规则的实际价值进行判断，做出正确的选择。
