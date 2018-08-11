@@ -73,6 +73,7 @@ var Monkey=Monkey||{};void function(P){var b=window,D=document,x=encodeURICompon
 第一种方法需要比较懂前端和网络，对于初学者难度很大；而Selenium则给新手提供了一个简单粗暴方便的方法。
 
 但是个人认为，**不到万不得已，不推荐使用Selenium**。
+
 吐槽一下Selenium 的缺点：
 
 1. 速度慢。每次运行爬虫都打开一个浏览器，如果没有设置，还会加载图片、JS等等一大堆东西；使用Selenium的速度至少比Request少一个量级。
@@ -124,7 +125,13 @@ page_response.content.decode('utf-8')
 ```
 输出
 ```
-<!DOCTYPE html>\n<!--STATUS OK-->\n<html>\n\n\n\n<head>\n<meta charset="UTF-8">\n<meta http-equiv="X-UA-Compatible" content="IE=Edge" />\n<meta name="referrer" content="always" />\n<meta name="description" content="网络爬虫（又被称为网页蜘蛛，网络机器人，在FOAF社区中间，更经常的称为网页追逐者），是一种按照一定的规则，自动地抓取万维网信息的程序或者脚本。另外一些不常使用的名字还有蚂蚁、自动索引、模拟程序或者蠕虫。...">\n<title>网络爬虫_百度百科</title>\n<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />\n<link rel="icon" sizes="any" mask href="//www.baidu.com/img/baidu.svg">\n\n<meta name="keywords" content="网络爬虫 爬虫 网页蜘蛛 爬虫程序 蜘蛛程序 搜索引擎蜘蛛 蜘蛛 网络蜘蛛 网络爬虫产生背景 网络爬虫面临的问题 网络爬虫分类 网络爬虫抓取目标分类 网络爬虫网页搜索策略 网络爬虫网页分析算法 网络爬虫补充">\n<meta name="image"
+<!DOCTYPE html>\n<!--STATUS OK-->\n<html>\n\n\n\n<head>\n<meta charset="UTF-8">\n<meta http-equiv="X-UA-Compatible" 
+content="IE=Edge" />\n<meta name="referrer" content="always" />\n<meta name="description" 
+content="网络爬虫（又被称为网页蜘蛛，网络机器人，在FOAF社区中间，更经常的称为网页追逐者），是一种按照一定的规则，自动地抓取万维网信息的程序或者脚本。另外一些不常使用的名字还有蚂蚁、自动索引、模拟程序或者蠕虫。...">
+\n<title>网络爬虫_百度百科</title>\n<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+\n<link rel="icon" sizes="any" mask href="//www.baidu.com/img/baidu.svg">\n
+\n<meta name="keywords" content="网络爬虫 爬虫 网页蜘蛛 爬虫程序 蜘蛛程序 搜索引擎蜘蛛 蜘蛛 网络蜘蛛 网络爬虫产生背景 网络爬虫面临的问题 网络爬虫分类 网络爬虫抓取目标分类 网络爬虫网页搜索策略 网络爬虫网页分析算法 网络爬虫补充">
+\n<meta name="image"
 ```
 可以看到request获得的html里面直接有我们想要的信息，所以这里直接用requests就好了～
 
@@ -260,7 +267,9 @@ page_response.status_code
 ```
 结果request返回了`202`，返回的页面也是一堆看不懂的文本
 ```html
-'<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">\n<html>\n<head>\n<meta http-equiv="Content-Type" content="text/html; charset=utf-8">\n</head>\n<body><meta id="9DhefwqGPrzGxEp9hPaoag" content="Lt{ckL\\kM_k~lk|}klNkntkz&gt;k~xk|bk)}klc&amp;Q-agjjm[\\kkgt[:[[_[lm^fgh?j@socREdC&lt;k,nQTFP.MAHLr3DBaKJ4-]qGIe)2uS=\\Nip+O&gt;1btZ/U`0_vxwy !#$%z{|}~(58:;VXY[s[^`dg[^[ngd^`[^ji^\\o[\\):)3)~&amp;&gt;soZtdvUnXN)+WxzqMwO(Z}B{a|ss`v/n\\yr|z(/t=}?/[(sx-uP~y(x|,||}EnRMr~f~mM,|[rCrfumm`Npxp}bRayUzvOVqatUz){Rpx|Y~@%-}+f&gt;].SufpSunS^]Op0?el-I]5HV/ORKvOHV/]O`I^TrT@]0rDQT.dv]Grv.OV6]V6VAmhwnf&gt;]HHPv5Hcs]e_PFC_OJRVW]EjKcHSvmRD]5@/WCHtRO3OwtlD]Okm3Gp&gt;]Cri4Ori?F.w1]5-KWpsvefpmq]Jk6Iq&gt;]CR/2trjRT^].iVH&gt;S^]pStqELPle6bqppP`&gt;n]5Li]VSOBGSOlm&gt;]THK+HjKM]VhT6]VSSd&gt;iuuflGlfin]t_b2t@PbNsc3JMcgtpikeHm3CsQkqAv45AQUOMW]qHW]N`4wN.44qscbtD]eSKtOHo5Jk/iCHVDR_bDR-v5JHm+Jk/DNVPsNjP?0n]...
+'<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+\n<html>\n<head>\n<meta http-equiv="Content-Type" content="text/html; charset=utf-8">\n</head>
+\n<body><meta id="9DhefwqGPrzGxEp9hPaoag" content="Lt{ckL\\kM_k~lk|}klNkntkz&gt;k~xk|bk)}klc&amp;Q-agjjm[\\kkgt[:[[_[lm^fgh?j@socREdC&lt;k,nQTFP.MAHLr3DBaKJ4-]qGIe)2uS=\\Nip+O&gt;1btZ/U`0_vxwy !#$%z{|}~(58:;VXY[s[^`dg[^[ngd^`[^ji^\\o[\\):)3)~&amp;&gt;soZtdvUnXN)+WxzqMwO(Z}B{a|ss`v/n\\yr|z(/t=}?/[(sx-uP~y(x|,||}EnRMr~f~mM,|[rCrfumm`Npxp}bRayUzvOVqatUz){Rpx|Y~@%-}+f&gt;].SufpSunS^]Op0?el-I]5HV/ORKvOHV/]O`I^TrT@]0rDQT.dv]Grv.OV6]V6VAmhwnf&gt;]HHPv5Hcs]e_PFC_OJRVW]EjKcHSvmRD]5@/WCHtRO3OwtlD]Okm3Gp&gt;]Cri4Ori?F.w1]5-KWpsvefpmq]Jk6Iq&gt;]CR/2trjRT^].iVH&gt;S^]pStqELPle6bqppP`&gt;n]5Li]VSOBGSOlm&gt;]THK+HjKM]VhT6]VSSd&gt;iuuflGlfin]t_b2t@PbNsc3JMcgtpikeHm3CsQkqAv45AQUOMW]qHW]N`4wN.44qscbtD]eSKtOHo5Jk/iCHVDR_bDR-v5JHm+Jk/DNVPsNjP?0n]...
 ```
 刚开始的时候以为是网络的问题，后来多次尝试一直都是上面的结果。Google之后才发现，原来遇到了反爬虫！网站反爬虫的方式是**JS混淆加密**！
 
@@ -288,7 +297,14 @@ r.html.html
 ```
 输出
 ```html
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html><head>\n<meta http-equiv="Content-Type" content="text/html; charset=utf-8">\n</head>\n<body><!--[if lt IE 9]><script r=\'m\'>document.createElement("section")</script><![endif]-->\n<input type="hidden" id="__onload__" name="Fp8XVuTkBQC5NKiFQOzye1ptDY682drw_laHCobFerpfWVRFTo4FerY_TV5c6n0EMfqBw_rgFA2f.u1YiRNcwMcTxei5u5gd7NfPvDgR_vZ0UsaPFegUjNXw.2YRd.PFPQxZfzR__iKopOd1a3FbbMTemxmKS0ItUYJsq6PrywYSnXf0DIn9wvZhHqiLTWNO8l4y4XP9oPjI0N9EaoYFJi1BBgzfU6GBFUnRQnPHHE6CMhYu45nZ67knVroV34qip9dtNJNoZPN9UWSURomUlRPA5RfNFINJnnSGlOj.rHG" value="BNci6iLb2KjA85PYCZ636a">\n\n<a href="javascript: void(0);" style="display:none" datas-ts="=X+LsK">admin</a><a href="javascript: void(0);" style="display:none" datas-ts="=DK!Ew">wp-admin</a><a href="javascript: void(0);" style="display:none" datas-ts="=~v|B ">backend</a>\n\n</body></html>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html><head>
+\n<meta http-equiv="Content-Type" content="text/html; charset=utf-8">\n</head>
+\n<body><!--[if lt IE 9]><script r=\'m\'>document.createElement("section")</script><![endif]-->
+\n<input type="hidden" id="__onload__" 
+name="Fp8XVuTkBQC5NKiFQOzye1ptDY682drw_laHCobFerpfWVRFTo4FerY_TV5c6n0EMfqBw_rgFA2f.u1YiRNcwMcTxei5u5gd7NfPvDgR_vZ0UsaPFegUjNXw.2YRd.PFPQxZfzR__iKopOd1a3FbbMTemxmKS0ItUYJsq6PrywYSnXf0DIn9wvZhHqiLTWNO8l4y4XP9oPjI0N9EaoYFJi1BBgzfU6GBFUnRQnPHHE6CMhYu45nZ67knVroV34qip9dtNJNoZPN9UWSURomUlRPA5RfNFINJnnSGlOj.rHG" 
+value="BNci6iLb2KjA85PYCZ636a">
+\n\n<a href="javascript: void(0);" style="display:none" datas-ts="=X+LsK">admin</a><a href="javascript: void(0);" style="display:none" datas-ts="=DK!Ew">wp-admin</a><a href="javascript: void(0);" style="display:none" datas-ts="=~v|B ">backend</a>
+\n\n</body></html>
 ```
 可以看到里面返回了一对键值：
 ```
