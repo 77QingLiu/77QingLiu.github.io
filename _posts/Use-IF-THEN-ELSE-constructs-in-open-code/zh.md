@@ -34,8 +34,7 @@ As awesome as this feature is, there are a few rules that apply to the use of th
 
 ### Is it too late? 
 > Am I the only one who feels like this is around 20 years late?
-Are we so excited about this simply because the SAS base language has lacked modern programming constructs for so long?
-- Scott Bass
+Are we so excited about this simply because the SAS base language has lacked modern programming constructs for so long? - Scott Bass
 
 Scott Bass comments that SAS has been lack of modern programming constructs for a long time. such as this:
 ```python
