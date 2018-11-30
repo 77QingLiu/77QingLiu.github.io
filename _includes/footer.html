@@ -15,6 +15,9 @@
                         frameborder="0" scrolling="0" width="100px" height="20px"
                         src="https://ghbtns.com/github-btn.html?user=huxpro&repo=huxpro.github.io&type=star&count=true" >
                     </iframe>
+                    <br>
+                    <a href="http://www.miitbeian.gov.cn/" rel="external nofollow" target="_blank">湘ICP备18023539号
+                    </a>
                 </p>
             </div>
         </div>
@@ -135,7 +138,7 @@
 <script type="text/javascript">
     function generateCatalog (selector) {
 
-        // interop with multilangual 
+        // interop with multilangual
         if ('{{ page.multilingual }}' == 'true') {
             _containerSelector = 'div.post-container.active'
         } else {
@@ -225,7 +228,7 @@
             $en.style.display = "none";
             $en.classList.remove("active");
         }
-        // interop with catalog 
+        // interop with catalog
         if ("{{ page.catalog }}") generateCatalog(".catalog-body");
     }
 
