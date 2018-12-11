@@ -4,7 +4,7 @@ title:    "不会爬虫的分析师不是好厨子"
 date:     "2018-08-11 20:54"
 subtitle: ""
 author:       "Qing"
-header-img:   //p7ffgka2w.bkt.clouddn.com/18-8-11/18488745.jpg
+header-img:   //images.77qingliu.com/18-8-11/18488745.jpg
 header-mask:  0.3
 catalog:      true
 multilingual: true

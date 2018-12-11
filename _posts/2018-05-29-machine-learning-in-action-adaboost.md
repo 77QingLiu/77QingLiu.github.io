@@ -4,7 +4,7 @@ title:    "集成学习之Adaboost算法原理"
 date:     "2018-05-29 20:23"
 subtitle: ""
 author:       "Qing"
-header-img:   //p7ffgka2w.bkt.clouddn.com/18-5-29/5842556.jpg
+header-img:   //images.77qingliu.com/18-5-29/5842556.jpg
 header-mask:  0.3
 catalog:      true
 multilingual: true

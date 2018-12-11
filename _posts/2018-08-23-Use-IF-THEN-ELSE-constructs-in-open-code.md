@@ -4,7 +4,7 @@ title:    "Use %IF-%THEN-%ELSE constructs in open code"
 date:     "2018-08-21 15:33"
 subtitle: ""
 author:       "Qing"
-header-img:   //p7ffgka2w.bkt.clouddn.com/18-8-21/80931235.jpg
+header-img:   //images.77qingliu.com/18-8-21/80931235.jpg
 header-mask:  0.3
 catalog:      true
 multilingual: true

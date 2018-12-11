@@ -4,7 +4,7 @@ title:    "SAS, 一个华丽时代的结束"
 date:     "2018-05-09 15:40"
 subtitle: ""
 author:       "Qing"
-header-img:   //p7ffgka2w.bkt.clouddn.com/18-5-9/25314128.jpg
+header-img:   //images.77qingliu.com/18-5-9/25314128.jpg
 header-mask:  0.3
 catalog:      true
 multilingual: true

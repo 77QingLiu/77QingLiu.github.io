@@ -4,7 +4,7 @@ title:    "Machine Learning in Action - Naive Bayes"
 date:     "2018-04-24 08:19"
 subtitle: ""
 author:       "Qing"
-header-img:   //p7ffgka2w.bkt.clouddn.com/18-4-24/47439573.jpg
+header-img:   //images.77qingliu.com/18-4-24/47439573.jpg
 header-mask:  0.3
 catalog:      true
 multilingual: true

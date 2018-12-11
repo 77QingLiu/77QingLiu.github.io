@@ -1,7 +1,7 @@
 # Site settings
 title: Yet Another Insignificant Blog in Data Science
 SEOTitle: 青的博客 | Qing's Blog
-header-img: //p7ffgka2w.bkt.clouddn.com/18-7-12/93642647.jpg
+header-img: //images.77qingliu.com/18-7-12/93642647.jpg
 email: 77qingliu@gmail.com
 description: "Data Analyst, SAS Programmer | 这里是 @Qing 的个人博客"
 keyword: "Qing, Qing's Blog, 博客, 个人网站, 数据分析, 临床试验, SAS, Pandas, Data"
@@ -68,7 +68,7 @@ kramdown:
 # Sidebar settings
 sidebar: true                           # whether or not using Sidebar.
 sidebar-about-description: "写写代码，做做分析"
-sidebar-avatar: http://p7ffgka2w.bkt.clouddn.com/avatar-qing.jpg      # use absolute URL, seeing it's used in both `/` and `/about/`
+sidebar-avatar: http://images.77qingliu.com/avatar-qing.jpg      # use absolute URL, seeing it's used in both `/` and `/about/`
 
 
 

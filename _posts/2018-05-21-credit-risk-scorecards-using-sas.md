@@ -4,7 +4,7 @@ title:    "Credit Risk Scorecards: Development and Implementation Using SAS"
 date:     "2018-05-21 19:29"
 subtitle: ""
 author:       "Qing"
-header-img:   //p7ffgka2w.bkt.clouddn.com/18-5-21/65142478.jpg
+header-img:   //images.77qingliu.com/18-5-21/65142478.jpg
 header-mask:  0.3
 catalog:      true
 multilingual: true

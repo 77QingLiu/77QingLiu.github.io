@@ -4,7 +4,7 @@ title:    "[啤酒与尿不湿]之关联规则"
 date:     "2018-06-10 20:54"
 subtitle: ""
 author:       "Qing"
-header-img:   //p7ffgka2w.bkt.clouddn.com/18-6-10/98904883.jpg
+header-img:   //images.77qingliu.com/18-6-10/98904883.jpg
 header-mask:  0.3
 catalog:      true
 multilingual: true

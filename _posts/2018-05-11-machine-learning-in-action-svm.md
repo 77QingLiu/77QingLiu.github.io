@@ -4,7 +4,7 @@ title:    "支持向量机(SVM)算法原理"
 date:     "2018-05-11 21:26"
 subtitle: ""
 author:       "Qing"
-header-img:   //p7ffgka2w.bkt.clouddn.com/18-5-11/69655635.jpg
+header-img:   //images.77qingliu.com/18-5-11/69655635.jpg
 header-mask:  0.3
 catalog:      true
 multilingual: true

@@ -4,7 +4,7 @@ title:    "Machine Learning in Action - Logistic Regression"
 date:     "2018-05-02 21:12"
 subtitle: ""
 author:       "Qing"
-header-img:   //p7ffgka2w.bkt.clouddn.com/18-5-2/99754176.jpg
+header-img:   //images.77qingliu.com/18-5-2/99754176.jpg
 header-mask:  0.3
 catalog:      true
 multilingual: true

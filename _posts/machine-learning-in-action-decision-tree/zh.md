@@ -7,7 +7,7 @@
 
 # 决策树场景
 这里以机器学习-周志华书中西瓜书数据集为例子。在挑选西瓜的时候，我们要面对“这是好瓜吗？”这样的问题。进行决策时，通常会进行一系列的判断或“子决策”：我们先看“它是什么颜色？”，如果是“青绿色”，则我们再看“它的根蒂是什么形态？”，如果是“卷缩”，我们再判断“它敲起来是什么声音？”，最后，我们得出最终决策：这是一个好瓜。这个决策过程如图所示：
-![](http://p7ffgka2w.bkt.clouddn.com/18-4-20/48288531.jpg)
+![](http://images.77qingliu.com/18-4-20/48288531.jpg)
 
 # 决策树原理
 ## 决策树生成算法
@@ -206,7 +206,7 @@ def visualize_tree(tree, feature_names):
     subprocess.check_call(command)
 ```
 最终得到的是以下图形
-![](http://p7ffgka2w.bkt.clouddn.com/18-4-20/64345968.jpg)
+![](http://images.77qingliu.com/18-4-20/64345968.jpg)
 > 注意！使用中文会出现乱码问题。这里需要将`with open("dt.dot", 'w', encoding='utf-8')`这里面生成的`dt.dot`文件重新打开，并且在里面加入`node [shape=box fontname="FangSong"] ;`，然后将文件另存为**不带BOM的UTF-8编码文件**，最后在命令行里面手动通过`dot -Tpng dt.dot -o dt.png`手动生成最后的图片。
 
 ## 总结

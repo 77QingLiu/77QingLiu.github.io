@@ -33,7 +33,7 @@
 
 ### 如何分析页面数据格式？
 以百科为例，
-![](http://p7ffgka2w.bkt.clouddn.com/18-8-9/18470634.jpg)
+![](http://images.77qingliu.com/18-8-9/18470634.jpg)
 
 这里进入百科关键词页面，按下F12或者右键点击`检查`之后，浏览器右边便会展现网页的源代码。
 
@@ -96,7 +96,7 @@ for link in links:
 
 # 爬虫：以百科为例
 这里用爬取百度百科页面做一个演示，首先进入需要爬取的页面。
-![](http://p7ffgka2w.bkt.clouddn.com/18-8-10/39919199.jpg)
+![](http://images.77qingliu.com/18-8-10/39919199.jpg)
 
 ### 分析页面数据格式
 确定爬取内容：
@@ -105,7 +105,7 @@ for link in links:
 * 相关关键词
 
 打开网页的源代码，确定爬取目标在html中的位置
-![](http://p7ffgka2w.bkt.clouddn.com/18-8-10/75586573.jpg)
+![](http://images.77qingliu.com/18-8-10/75586573.jpg)
 例如，可以看到`中文名`这个关键词嵌套在
 ```html
 <dd class="basicInfo-item value">
@@ -242,7 +242,7 @@ for keyword in keywordlst:
 ```
 
 ### 流程总结
-![](http://p7ffgka2w.bkt.clouddn.com/mermaid-diagram-20180810082825.svg)
+![](http://images.77qingliu.com/mermaid-diagram-20180810082825.svg)
 
 ---
 
@@ -255,7 +255,7 @@ for keyword in keywordlst:
 
 ### 反爬虫：以CFDA为例
 最近项目需要从[食品药品监督管理局](http://app1.sfda.gov.cn/datasearch/face3/base.jsp?tableId=25&tableName=TABLE25&title=%B9%FA%B2%FA%D2%A9%C6%B7&bcId=124356560303886909015737447882)上爬取一些药品信息。
-![](http://p7ffgka2w.bkt.clouddn.com/18-8-11/32485746.jpg)
+![](http://images.77qingliu.com/18-8-11/32485746.jpg)
 分析页面后发现单药品信息通过链接`http://app1.sfda.gov.cn/datasearch/face3/content.jsp?tableId=25&tableName=TABLE25&tableView=国产药品&Id=29813`即可得到，其中更换`ID=29813`的数字即可得到不同的药品信息。
 
 随即想到直接Request不同的链接，解析得到的html就能得到所有的药品信息。
