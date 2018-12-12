@@ -4,7 +4,7 @@ title:    "2017 Year-end summary"
 date:     "2018-02-24 23:14"
 subtitle: ""
 author:       "Qing"
-header-img:   //images.77qingliu.com/revolution-05-center.jpg
+header-img:   //img.77qingliu.com/revolution-05-center.jpg
 header-mask:  0.3
 catalog:      true
 multilingual: true

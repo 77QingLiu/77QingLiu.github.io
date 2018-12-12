@@ -36,10 +36,10 @@
 
 ## Apriori算法
 如果一个事务数据集中包含5个{a}，{b}，{c}，{d}，{e}不同的数据项，则该问题的解空间包含25个候选项集，如下图所示。
-![](http://images.77qingliu.com/18-6-10/32481182.jpg)
+![](http://img.77qingliu.com/18-6-10/32481182.jpg)
 
 为了计算该解空间中每一个候选项集的支持度，Brute-force方法通过扫描事务数据集，将所有候选项集与事务逐一比较。如果事务中包含该候选项集，则增加候选项集的支持度。该过程如下图所示。
-![](http://images.77qingliu.com/18-6-10/68452100.jpg)
+![](http://img.77qingliu.com/18-6-10/68452100.jpg)
 
 从而，可知Brute-force方法的时间复杂度约为O(NMw)，其中N是事务数据集的大小，M是候选项集的数量，w是平均事务的长度。由于M=2k，k是数据项的数量，因此，该方法的时间复杂度是指数级别。这种方法效率太低，有没有其他效率更高的方法呢？
 
@@ -68,7 +68,7 @@ E|牛奶，鸡蛋，可乐
 F|啤酒，可乐
 
 算法图解如下：
-![](http://images.77qingliu.com/18-6-10/70671267.jpg)
+![](http://img.77qingliu.com/18-6-10/70671267.jpg)
 
 上面的图演示了Apriori算法的过程，注意看由二级频繁项集生成三级候选项集时，没有{牛奶,面包,啤酒}，那是因为{面包,啤酒}不是二级频繁项集，这里利用了Apriori定理。最后生成三级频繁项集后，没有更高一级的候选项集，因此整个算法结束，{牛奶,面包,尿布}是最大频繁子集。由最后得到的频繁项集，可以通过组合子集得到对应的关联规则。
 
@@ -85,9 +85,9 @@ F|啤酒，可乐
 
 该算法只需要扫描项目表2次。其中第1次扫描获得当个项目的频率，去掉不符合支持度要求的项，并对剩下的项排序。第2遍扫描是建立一颗FP-Tree树。接下来的工作就是在FP-Tree上进行挖掘。
 举个例子：
-![](http://images.77qingliu.com/18-6-10/79494768.jpg)
+![](http://img.77qingliu.com/18-6-10/79494768.jpg)
 对应的FP-树如下：
-![](http://images.77qingliu.com/18-6-10/80832806.jpg)
+![](http://img.77qingliu.com/18-6-10/80832806.jpg)
 这个算法的思路详见[数据挖掘概念与技术](https://book.douban.com/subject/2038599/)这本书第6章，这里就不再赘述了。
 
 ## 规则评估方法
@@ -184,24 +184,24 @@ IR(A,B) = \frac{|sup(A)-sup(B)|}{sup(A) + sup(B) - sup(A\cup B)}
 ## 使用SAS进行关联分析
 SAS发布的[Visual Data Mining and Machine Learning on SAS Viya](https://www.sas.com/en_us/software/viya.html)能够很方便的进行关联分析，并进行数据可视化。
 下面以如下数据进行演示，这个数据记录着一家超市在过去一年内的购买记录。Customer是交易ID，Time是购买量， Product 是购买的物品. 想要直接进行分析，数据的存储必须是纵向的——每个人每次商品一行。
-![](http://images.77qingliu.com/18-6-10/71064687.jpg)
+![](http://img.77qingliu.com/18-6-10/71064687.jpg)
 
 数据准备好之后，可以直接使用[MBANALYSIS Procedure](http://documentation.sas.com/?docsetId=casml&docsetTarget=viyaml_mbanalysis_gettingstarted.htm&docsetVersion=8.2&locale=en)进行分析。
-![](http://images.77qingliu.com/18-6-10/46547287.jpg)
+![](http://img.77qingliu.com/18-6-10/46547287.jpg)
 这里通过指定`pctsupport=1`，限定最小支持度为1%。
 运行之后，输出结果如下
-![](http://images.77qingliu.com/18-6-10/41915639.jpg)
+![](http://img.77qingliu.com/18-6-10/41915639.jpg)
 输出结果包括支持度，置信度，提升值
 对于输出里面的第一条规则，可以看到coke和ice cream在交易里面一起出现了220次，提升度为2.37，意味着购买coke之后让购买ice cream的概率翻倍。
 
 虽然上面给出了明确的关联规则，但是文字格式让探索这些规则变得困难。解决这个问题的方法是通过绘制网络图，可视化这些关系。下面的sql程序进行绘制网络图的数据准备。
-![](http://images.77qingliu.com/18-6-10/37715365.jpg)
+![](http://img.77qingliu.com/18-6-10/37715365.jpg)
 整理后的数据格式如下，T1_ITEM是“Source”，而ITEM2是“Target”，使用“Lift”值去链接source 和 target 变量。
-![](http://images.77qingliu.com/18-6-10/61507727.jpg)
+![](http://img.77qingliu.com/18-6-10/61507727.jpg)
 然后使用下面的程序绘制网络图
-![](http://images.77qingliu.com/18-6-10/28306260.jpg)
+![](http://img.77qingliu.com/18-6-10/28306260.jpg)
 得到如下输出：
-![](http://images.77qingliu.com/18-6-10/33626822.jpg)
+![](http://img.77qingliu.com/18-6-10/33626822.jpg)
 太酷了！SAS功能真心强大。
 这里摘自[Market basket analysis in SAS viya](https://blogs.sas.com/content/sgf/2018/01/17/visualizing-the-results-of-a-market-basket-analysis-in-sas-viya/)（没有高大上的SAS visual analytics，无法亲身测试）。
 

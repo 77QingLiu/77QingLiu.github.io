@@ -4,7 +4,7 @@ title:    "Machine Learning in Action - kNN"
 date:     "2018-04-13 23:56"
 subtitle: ""
 author:       "Qing"
-header-img:   //images.77qingliu.com//knn.png
+header-img:   //img.77qingliu.com//knn.png
 header-mask:  0.3
 catalog:      true
 multilingual: true

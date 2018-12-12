@@ -4,7 +4,7 @@ SAS provides many ways to perform table lookups operation, such as using `if-the
 
 ## What is table lookup？
 Table lookup should be familiar to anyone with data analysis or database. The so-called table lookup usually refers to finding corresponding values in another data table through certain key combinations. For example, there is one table called A and there is only state ID in this dataset and there is another table called B which have both state ID and state capital, and I'd like to know the corresponding capital for each state in table A. How can we achieve this? The answer is table look up. The text description may be a little abstract, see the figure below.
-![](http://images.77qingliu.com/18-5-3/91788580.jpg)
+![](http://img.77qingliu.com/18-5-3/91788580.jpg)
 
 
 ## Frequently used table lookup methods
@@ -78,7 +78,7 @@ That is, it accesses records by mapping key values to a location in the table to
 
 The Hash table is similar to the index in the dictionary. Through the index we can quickly find the word we are looking for.   
 You can also compare the hash table to the summary of the article. Through the summary, we can quickly find the corresponding article.
-![](http://images.77qingliu.com/18-5-3/28909375.jpg)
+![](http://img.77qingliu.com/18-5-3/28909375.jpg)
 
 > Hash table in FCMP
 

@@ -4,7 +4,7 @@ title:    "A Hash Approach to Lookup Table in SAS"
 date:     "2018-05-05 10:16"
 subtitle: ""
 author:       "Qing"
-header-img:   //images.77qingliu.com/18-5-5/64066138.jpg
+header-img:   //img.77qingliu.com/18-5-5/64066138.jpg
 header-mask:  0.3
 catalog:      true
 multilingual: true

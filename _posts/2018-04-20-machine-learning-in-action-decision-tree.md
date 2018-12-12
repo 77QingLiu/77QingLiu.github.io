@@ -4,7 +4,7 @@ title:    "Machine Learning in Action - Decision Tree"
 date:     "2018-04-13 23:56"
 subtitle: ""
 author:       "Qing"
-header-img:   //images.77qingliu.com/18-4-20/4461127.jpg
+header-img:   //img.77qingliu.com/18-4-20/4461127.jpg
 header-mask:  0.3
 catalog:      true
 multilingual: true

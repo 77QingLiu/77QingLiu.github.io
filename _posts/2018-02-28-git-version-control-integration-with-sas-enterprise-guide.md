@@ -4,7 +4,7 @@ title:    "GIT Version Control Integration with SAS Enterprise Guide"
 date:     "2018-02-28 12:52"
 subtitle: ""
 author:       "Qing"
-header-img:   //images.77qingliu.com/git.jpg
+header-img:   //img.77qingliu.com/git.jpg
 header-mask:  0.3
 catalog:      true
 multilingual: true
