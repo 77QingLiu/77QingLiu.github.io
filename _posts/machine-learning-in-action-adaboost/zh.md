@@ -14,19 +14,23 @@
 ![](http://img.77qingliu.com/18-5-29/49443636.jpg)
 
 我们做个简单分析。考虑二分类问题$$y\in\{-1,+1\}$$和真实函数$$f$$，假定基分类器的错误率为$$\epsilon$$，即对每个基分类器$$h_i$$有
-\\[
+$$
 P(h_i(x)\ne f(x)) = \epsilon
-\\]
+$$
 假设集成通过简单投票法结合T个基分类器，若有超过半数的基分类器正确，则集成分类就正确：
-\\[
+
+$$
 H(x) = sign\left(\sum_{i=1}^Th_i(x)\right)
-\\]
+$$
+
 假设基分类器的错误率互相独立，则由 **[Hoeffding](https://blog.csdn.net/z_x_1996/article/details/73564926)** 不等式可知，集成的错误率为：
-\\[
+
+$$
 \begin{aligned}
 P(h_i(x)\ne f(x)) &= \sum_{k=0}^{\lfloor T/2\rfloor}\binom{T}{k}(1-\epsilon)^k{\epsilon}^{T-k} \\\\ &=exp\left(-\frac{1}{2}T(1-2\epsilon)^2\right)
 \end{aligned}
-\\]
+$$
+
 上式显示出，随着集成个体数目T的增大，集成的错误率将指数级下降，最终趋向于零。      
 但是上面的分析有一个关键假设：基学习器的误差相互独立。在现实任务中，个体学习器是为解决同一个问题训练出来的，它们显然不可能互相独立！事实上，个体学习器的“准确性”和“多样性”本身就存在冲突。一般，准确性很高之后，要增加多样性就需牺牲准确性。事实上，如何产生并结合“好而不同”的个体学习器，恰是集成学习研究的核心。      
 根据个体学习器的生成方式，目前的集成学习方法大致分为两大类：
@@ -46,9 +50,11 @@ P(h_i(x)\ne f(x)) &= \sum_{k=0}^{\lfloor T/2\rfloor}\binom{T}{k}(1-\epsilon)^k{\
 
 ## Adaboost算法的基本思路
 现在叙述AdaBoost算法。假设给定一个二类分类的训练数据集
-\\[
+
+$$
 T = \{(x_1,y_1),(x_2,y_2),\cdot\cdot\cdot,(x_n,y_n)\}
-\\]
+$$
+
 其中，每个样本点由实例与标记组成。实例$$x_i\in\chi\subseteq R^n$$，标记$$y_i\in Y=\{-1,+1\}$$，
 AdaBoost算法利用下列算法，从训练数据集中学习一系列弱分类器或基分类器，并将这些弱分类器线性组合成为一个强分类器。
 
@@ -56,34 +62,62 @@ AdaBoost算法利用下列算法，从训练数据集中学习一系列弱分类
 
 输出：最终分类器$$G(x)$$
 
-1. 初始化训练数据的权值分布：\\[D_1=(w_{11},\cdot\cdot\cdot,w_{1i},\cdot\cdot\cdot,w_{1N}), w_{1i}=\frac{1}{N}, i = 1,2,\cdot\cdot\cdot,N\\]
+1. 初始化训练数据的权值分布：
+$$D_1=(w_{11},\cdot\cdot\cdot,w_{1i},\cdot\cdot\cdot,w_{1N}), w_{1i}=\frac{1}{N}, i = 1,2,\cdot\cdot\cdot,N$$
+
 2. 对$$m=1,2,\cdot\cdot\cdot,M$$
-    1. 使用具有权值分布$$D_m$$的训练数据集学习，得到基本分类器\\[G_m(x):\chi\to{-1,+1}\\]
-    2. 计算$$G_m(x)$$在训练数据集上的分类误差率\\[e_m=P(G_m(x_i)\ne y_i) = \sum_{i=1}^Nw_{mi}I(G_m(x_i)\ne y_i)\\]
-    3. 计算$$G_m(x)$$的系数\\[\alpha_m = \frac{1}{2}log\frac{1-e_m}{e_m}\\]
-    4. 更新训练数据集的权值分布\\[D_{m+1}=(w_{m+1,1},\cdot\cdot\cdot,w_{m+1,i},\cdot\cdot\cdot,w_{m+1,N}) \\\\ w_{m+1,i} = \frac{w_{m,i}}{Z_m}exp(-\alpha_my_iG_m(x_i)), i=1,2,\cdot\cdot\cdot,N\\]这里，$$Z_m$$是规范化因子\\[Z_m=\sum_{i=1}^Nw_{m,i}exp(-\alpha_my_iG_m(x_i))\\]它使得$$D_{m+1}$$成为一个概率分布。
-3. 构建基本分类器的线性组合\\[f(x) = \sum_{m=1}^M\alpha_mG_m(x)\\]得到最终分类器\\[G(x) = sign(f(x))=sign\left(\sum_{m=1}^M\alpha_mG_m(x)\right)\\]
+    1. 使用具有权值分布$$D_m$$的训练数据集学习，得到基本分类器
+$$G_m(x):\chi\to{-1,+1}$$
+
+    2. 计算$$G_m(x)$$在训练数据集上的分类误差率
+$$e_m=P(G_m(x_i)\ne y_i) = \sum_{i=1}^Nw_{mi}I(G_m(x_i)\ne y_i)$$
+
+    3. 计算$$G_m(x)$$的系数
+$$\alpha_m = \frac{1}{2}log\frac{1-e_m}{e_m}$$
+
+    4. 更新训练数据集的权值分布
+$$D_{m+1}=(w_{m+1,1},\cdot\cdot\cdot,w_{m+1,i},\cdot\cdot\cdot,w_{m+1,N}) \\\\ w_{m+1,i} = \frac{w_{m,i}}{Z_m}exp(-\alpha_my_iG_m(x_i)), i=1,2,\cdot\cdot\cdot,N$$
+这里，$$Z_m$$是规范化因子
+$$Z_m=\sum_{i=1}^Nw_{m,i}exp(-\alpha_my_iG_m(x_i))$$
+它使得$$D_{m+1}$$成为一个概率分布。
+3. 构建基本分类器的线性组合
+$$f(x) = \sum_{m=1}^M\alpha_mG_m(x)$$
+得到最终分类器
+$$G(x) = sign(f(x))=sign\left(\sum_{m=1}^M\alpha_mG_m(x)\right)$$
+
 这里说明以下3个方面：
 
 * 计算基本分类器$$G_m(x)$$的系数$$\alpha_m$$，$$\alpha_m$$表示$$G_m(x)$$在最终分类器中的重要性。当$$e_m \le \frac{1}{2}$$时，$$\alpha_m \gt 0$$，并且$$\alpha_m$$随机$$e_m$$的减小而增大，所以分类误差越小的基本分类器在最终分类器中的作用越大。
-* 式$$w_{m+1,i} = \frac{w_{m,i}}{Z_m}exp(-\alpha_my_iG_m(x_i))$$可以写成:\\[w_{m+1, i} = \begin{cases}&\frac{w_{m,i}}{Z_m}e^{-\alpha_m},\qquad G_m(x_i)=y_i\\\\&\frac{w_{m,i}}{Z_m}e^{\alpha_m}, \qquad   G_m(x_i) \ne y_i\end{cases}\\]由此可知，被基本分类器$$G_m(x)$$误分类样本的权值得以扩大，而被正确分类样本的权值却得以缩小。因此，误分类样本在下一轮学习中起更大的作用，不改变所给的训练数据，而不断改变训练数据权值的分布，使得训练数据在基本分类器的学习中起不同的作用。
+* 式$$w_{m+1,i} = \frac{w_{m,i}}{Z_m}exp(-\alpha_my_iG_m(x_i))$$可以写成:
+$$w_{m+1, i} = \begin{cases}&\frac{w_{m,i}}{Z_m}e^{-\alpha_m},\qquad G_m(x_i)=y_i\\\\&\frac{w_{m,i}}{Z_m}e^{\alpha_m}, \qquad   G_m(x_i) \ne y_i\end{cases}$$
+由此可知，被基本分类器$$G_m(x)$$误分类样本的权值得以扩大，而被正确分类样本的权值却得以缩小。因此，误分类样本在下一轮学习中起更大的作用，不改变所给的训练数据，而不断改变训练数据权值的分布，使得训练数据在基本分类器的学习中起不同的作用。
 * 最终分类器的生成是M个基分类器的加权表决。系数$$\alpha_m$$表示了基本分类器$$G_m(x)$$的重要性，这里，所有的$$\alpha_m$$之和并不为1。
 
 
 ## Adaboost算法的推导
-Adaboost算法有多种推导方式，比较容易理解的是基于“加性模型”，即基学习器的线性组合\\[G(x) = \sum_{m=1}^M\alpha_mG_m(x)\\]来最小化指数损失函数\\[\ell_{exp}(G|D)=E_{x\sim D}[e^{-yG(x)}]\\]
+Adaboost算法有多种推导方式，比较容易理解的是基于“加性模型”，即基学习器的线性组合
+$$G(x) = \sum_{m=1}^M\alpha_mG_m(x)$$
+来最小化指数损失函数
+$$\ell_{exp}(G|D)=E_{x\sim D}[e^{-yG(x)}]$$
+
 其中$$y$$是样本的实际类别，$$G(x)$$是预测的类别，样本$$x$$的权重服从$$D$$分布，$$E$$代表求期望。
 
 ### 损失函数的定义
 那么损失函数为什么这样定义呢？下面证明：
 若$$G(x)$$能使损失函数最小化，那我们考虑上式对$$G(x)$$的偏导为零：
-\\[\frac{\alpha \ell_{exp}(G|D)}{\alpha G(x)}=-e^{-G(x)}P(y=1|x)+e^{G(x)}P(y=-1|x)\\]
+
+$$\frac{\alpha \ell_{exp}(G|D)}{\alpha G(x)}=-e^{-G(x)}P(y=1|x)+e^{G(x)}P(y=-1|x)$$
+
 
 令上式为零，得：
-\\[G(x)=\frac{1}{2}ln\frac{P(y=1|x)}{P(y=-1|x)} \\]
+
+$$G(x)=\frac{1}{2}ln\frac{P(y=1|x)}{P(y=-1|x)} $$
+
 
 因此，有
-\\[sign(G(x))=sign(\frac{1}{2}ln\frac{P(y=1|x)}{P(y=-1|x)})\\]
+
+$$sign(G(x))=sign(\frac{1}{2}ln\frac{P(y=1|x)}{P(y=-1|x)})$$
+
 
 当$$P(y=1\vert x)>P(y=-1\vert x)$$时，$$sign(f(x))=1$$
 当$$P(y=1\vert x)>P(y=-1\vert x)$$时，$$sign(f(x))=-1$$
@@ -95,28 +129,36 @@ Adaboost算法有多种推导方式，比较容易理解的是基于“加性模
 接下来，我们看一下基类器 $$G_m(x)$$ 和系数 $$\alpha_{i}$$ 的求取。
 
 在Adaboost算法中，第一个分类器$$G1(x)$$是直接将基学习算法用于初始数据分布求得，之后不断迭代，生成 $$\alpha_m$$ 和 $$G_m$$ 。当第m个基分类器产生后,我们应该使得其在数据集第m轮样本权重基础上的指数损失最小，即:
-\\[
+
+$$
 \begin{aligned}
 L(\alpha_m,G_m(x))&=argmin  E_{x\sim D_m}\left[ {exp(-y\alpha_mG_m(x))} \right] \\\\ &=E_{x\sim D_m}\left[ \sum_{y_i=G_m(x_i)}{e^{-\alpha_m}}+\sum_{y_i\ne G_m(x_i)}{e^{\alpha_m}} \right] \\\\ &=e^{-\alpha_m}P(y_i=G_m(x_i))+e^{\alpha_m}P(y_i\ne G_m(x_i)) \\\\ &=e^{-\alpha_m}(1-e_m)+e^{\alpha_m}e_m \\\\
 \end{aligned}
-\\]
+$$
+
 考虑指数损失函数的导数为零
-\\[
+
+$$
 \frac{\alpha L(\alpha_m,G_m(x))}{\alpha\alpha_m}=-e^{-\alpha_{m}}(1-e_m)+e^{\alpha_{m}}e_m=0
-\\]
+$$
+
 可解得
-\\[
+
+$$
 \alpha_m=\frac{1}{2}ln(\frac{1-e_m}{e_m})
-\\]
+$$
+
 这恰是分类器权重更新公式
 
 ### 如何更新样本权重D?
 这一部分比较长，在周志华老师《机器学习》P175有详细的推导，感兴趣的读者可以自行查阅。这里直接给出 $$D_m$$ 的迭代公式。
-\\[
+
+$$
 \begin{equation}\begin{aligned}
 D_{m}&=(w_{m,1},w_{m,2},...w_{m,N}) \\\\ D_{m+1}&=(w_{m+1,1},w_{m+1,2},...w_{m+1,N}) \\\\ w_{m+1,i}&=\frac{w_{mi}exp(-\alpha_my_iG_m(x_i))}{Z_m}
 \end{aligned}\end{equation}
-\\]
+$$
+
 其中 $$Z_m=\sum_{i=1}^{N}{w_{mi}exp(-\alpha_my_iG_m(x_i))}$$ ，是一个常数。
 
 ## AdaBoost算法的误差

@@ -13,13 +13,21 @@
 这部分总结如何求得超平面
 
 ### 划分超平面
-在样本空间中，划分超平面可通过如下线性方程来描述：\\[w^Tx + b = 0\\]其中$$w = (w_1;w_2;...;w_d)$$为法向量，决定了超平面的方向；$$b$$为位移项，决定了超平面与远点的距离。显然，不同的$$w$$和$$b$$确定不同的分个面。样本空间中任意一点$$x$$到超平面$$(w, b)$$的距离可写为\\[d = \frac{|w^Tx + b|}{||w||}\\]假设超平面能将训练样本正确分类，如果数据点在分割平面上方则$$w^Tx + b > 0$$；数据点在分割平面下方，则$$w^Tx + b < 0$$。这样我们在表示任意数据点到分割面的距离就会很麻烦，但是我们通过将数据标签设为+1/-1将距离公式统一：\\[d = y_i\cdot\frac{(w^Tx + b)}{||w||}\\]
+在样本空间中，划分超平面可通过如下线性方程来描述：
+$$w^Tx + b = 0$$
+其中$$w = (w_1;w_2;...;w_d)$$为法向量，决定了超平面的方向；$$b$$为位移项，决定了超平面与远点的距离。显然，不同的$$w$$和$$b$$确定不同的分个面。样本空间中任意一点$$x$$到超平面$$(w, b)$$的距离可写为
+$$d = \frac{|w^Tx + b|}{||w||}$$
+假设超平面能将训练样本正确分类，如果数据点在分割平面上方则$$w^Tx + b > 0$$；数据点在分割平面下方，则$$w^Tx + b < 0$$。这样我们在表示任意数据点到分割面的距离就会很麻烦，但是我们通过将数据标签设为+1/-1将距离公式统一：
+$$d = y_i\cdot\frac{(w^Tx + b)}{||w||}$$
+
 
 ### 目标函数
 我们现在已经有了间隔的公式，我们需要找到一组最好的$$w$$和$$b$$确定的分割超平面使得支持向量距离此平面的间隔最大。
 
 #### 直接形式
-直接使用公式表示：\\[\arg\max_{w, b}\{\min_n\left(y_i\cdot\frac{(w^Tx_i + b)}{||w||}\right)\}\\]
+直接使用公式表示：
+$$\arg\max_{w, b}\{\min_n\left(y_i\cdot\frac{(w^Tx_i + b)}{||w||}\right)\}$$
+
 通俗翻译下就是现在数据点中找到距离分割平面最近的点(支持向量)，然后优化w和b来最大化支持向量到分割超平面的距离。
 
 直接优化上面的式子很困难，我们需要做一些处理，使得同样的优化问题可以使我们用方便的优化算法来求解。
@@ -34,7 +42,17 @@
 这里给函数间隔的法向量除以$$||w||$$，以规范化，使得间隔确定。
 
 #### 标准形式
-这里定义超平面$$(w,b)$$关于训练数据集的几何间隔为超平面关于所有样本点$$(x_i, y_i)$$的几何间隔最小值，即\\[\gamma = \min_n(\gamma_i) = \min_n(\frac{\hat{\gamma}}{||w||})\\]我们的优化目标是最大化间隔，这里可以把最小化部分放到约束条件中，表示为：\\[\arg\max_{w, b}\frac{\hat{\gamma}}{||w||}\\]subject to\\[y_i\cdot(w^Tx_i + b) ≥ \hat{\gamma}, i = 1,2,...,k\\]函数间隔$$\hat{\gamma}$$的取值并不影响最优化问题的解。事实上，假设将$$w$$和$$b$$成比例改变为$$\lambda w$$和$$\lambda b$$，这时函数间隔变为$$\lambda \hat{\gamma}$$。函数间隔的这一改变对上面优化问题的不等式约束没有影响，对目标函数的优化也没有影响。这样，就可以取$$\hat{\gamma} = 1$$，代入上面的最优化问题，注意到最大化$$\frac{1}{||w||}$$和最小化$$\frac{1}{2}{||w||}^2$$是等价的，于是就得到下面的线性可分支持向量机的最优化问题\\[\arg\min_{w, b}\frac{1}{2}{||w||}^2\\]subject to \\[y_i\cdot(w^Tx_i + b) ≥ 1,  i = 1,2,...,k\\]这是一个凸二次规划问题。能直接用现成的优化计算包求解，但我们可以有更高效的办法。
+这里定义超平面$$(w,b)$$关于训练数据集的几何间隔为超平面关于所有样本点$$(x_i, y_i)$$的几何间隔最小值，即
+$$\gamma = \min_n(\gamma_i) = \min_n(\frac{\hat{\gamma}}{||w||})$$
+我们的优化目标是最大化间隔，这里可以把最小化部分放到约束条件中，表示为：
+$$\arg\max_{w, b}\frac{\hat{\gamma}}{||w||}$$
+subject to
+$$y_i\cdot(w^Tx_i + b) ≥ \hat{\gamma}, i = 1,2,...,k$$
+函数间隔$$\hat{\gamma}$$的取值并不影响最优化问题的解。事实上，假设将$$w$$和$$b$$成比例改变为$$\lambda w$$和$$\lambda b$$，这时函数间隔变为$$\lambda \hat{\gamma}$$。函数间隔的这一改变对上面优化问题的不等式约束没有影响，对目标函数的优化也没有影响。这样，就可以取$$\hat{\gamma} = 1$$，代入上面的最优化问题，注意到最大化$$\frac{1}{||w||}$$和最小化$$\frac{1}{2}{||w||}^2$$是等价的，于是就得到下面的线性可分支持向量机的最优化问题
+$$\arg\min_{w, b}\frac{1}{2}{||w||}^2$$
+subject to 
+$$y_i\cdot(w^Tx_i + b) ≥ 1,  i = 1,2,...,k$$
+这是一个凸二次规划问题。能直接用现成的优化计算包求解，但我们可以有更高效的办法。
 ![](http://img.77qingliu.com/18-5-9/96280935.jpg)
 
 ### 学习的对偶算法
@@ -44,16 +62,46 @@
 * 自然引入核函数，进而推广到非线性分类问题      
 
 
-首先构建拉格朗日函数。为此，对每个不等式约束引进拉格朗日乘子$$\alpha_i \ge 0, i=1,2,...,N$$，定义拉格朗日函数：\\[L(w,b,a) = \frac{1}{2}{\|\|w\|\|}^2-\sum^N_{i=1}\alpha_i[y_i\cdot(w^Tx_i + b) - 1] \tag{1}\\]其中$$\alpha_i > 0$$。
+首先构建拉格朗日函数。为此，对每个不等式约束引进拉格朗日乘子$$\alpha_i \ge 0, i=1,2,...,N$$，定义拉格朗日函数：
+$$L(w,b,a) = \frac{1}{2}{\|\|w\|\|}^2-\sum^N_{i=1}\alpha_i[y_i\cdot(w^Tx_i + b) - 1] \tag{1}$$
+其中$$\alpha_i > 0$$。
 
-根据拉格朗日函数对偶性，原始问题的对偶问题是极大极小问题：\\[\max_\alpha\min_{w,b}L(w,b,\alpha)\\]所以，为了求解问题的解，需要先求$$L(w,b,\alpha)$$对$$w,b$$的极小，再求对$$\alpha$$的极大。
+根据拉格朗日函数对偶性，原始问题的对偶问题是极大极小问题：
+$$\max_\alpha\min_{w,b}L(w,b,\alpha)$$
+所以，为了求解问题的解，需要先求$$L(w,b,\alpha)$$对$$w,b$$的极小，再求对$$\alpha$$的极大。
 
 #### (1) 求$$\min_{w,b}L(w,b,\alpha)$$
-将拉格朗日函数$$L(w,b,\alpha)$$分别对$$w, b$$求偏导数令其等于0：\\[\nabla_w L(w,b,\alpha) = w - \sum_{i=1}^N\alpha_iy_ix_i = 0\\]\\[\nabla_b L(w,b,\alpha) = \sum_{i=1}^N\alpha_iy_i = 0\\]得\\[w = \sum_{i=1}^N\alpha_iy_ix_i\tag{2}\\]\\[\sum_{i=1}^N\alpha_iy_i = 0\tag{3}\\]将式$$(2)$$代入朗格朗日函数$$(1)$$并利用式$$(3)$$，即得\\[\begin{equation}\begin{aligned} L(w,b,\alpha) &= \frac{1}{2}\sum_{i=1}^N\sum_{j=1}^N\alpha_i\alpha_jy_iy_j(x_ix_j)-\sum^N_{i=1}\alpha_i\left[y_i\cdot\left(\left(\sum_{j=1}^N\alpha_iy_jx_j\right)x_i + b\right) - 1\right] + \sum_{i=1}^N\alpha_i \\\\  & = -\frac{1}{2}\sum_{i=1}^N\sum_{j=1}^N\alpha_i\alpha_jy_iy_j(x_i\cdot x_j) + \sum_{i=1}^N\alpha_i \end{aligned}\end{equation}\\]即\\[\min_{w,b}L(w,b,\alpha) = -\frac{1}{2}\sum_{i=1}^N\sum_{j=1}^N\alpha_i\alpha_jy_iy_j(x_i\cdot x_j) + \sum_{i=1}^N\alpha_i\\]
+将拉格朗日函数$$L(w,b,\alpha)$$分别对$$w, b$$求偏导数令其等于0：
+$$\nabla_w L(w,b,\alpha) = w - \sum_{i=1}^N\alpha_iy_ix_i = 0$$
+
+$$\nabla_b L(w,b,\alpha) = \sum_{i=1}^N\alpha_iy_i = 0$$
+得
+$$w = \sum_{i=1}^N\alpha_iy_ix_i\tag{2}$$
+
+$$\sum_{i=1}^N\alpha_iy_i = 0\tag{3}$$
+将式$$(2)$$代入朗格朗日函数$$(1)$$并利用式$$(3)$$，即得
+$$\begin{equation}\begin{aligned} L(w,b,\alpha) &= \frac{1}{2}\sum_{i=1}^N\sum_{j=1}^N\alpha_i\alpha_jy_iy_j(x_ix_j)-\sum^N_{i=1}\alpha_i\left[y_i\cdot\left(\left(\sum_{j=1}^N\alpha_iy_jx_j\right)x_i + b\right) - 1\right] + \sum_{i=1}^N\alpha_i \\\\  & = -\frac{1}{2}\sum_{i=1}^N\sum_{j=1}^N\alpha_i\alpha_jy_iy_j(x_i\cdot x_j) + \sum_{i=1}^N\alpha_i \end{aligned}\end{equation}$$
+即
+$$\min_{w,b}L(w,b,\alpha) = -\frac{1}{2}\sum_{i=1}^N\sum_{j=1}^N\alpha_i\alpha_jy_iy_j(x_i\cdot x_j) + \sum_{i=1}^N\alpha_i$$
+
 
 
 #### (2) 求$$\min_{w,b}L(w,b,\alpha)$$对$$\alpha$$的极大
-\\[\max_\alpha-\frac{1}{2}\sum_{i=1}^N\sum_{j=1}^N\alpha_i\alpha_jy_iy_j(x_i\cdot x_j) + \sum_{i=1}^N\alpha_i\\]subject to \\[\sum_{i=1}^N\alpha_iy_i = 0\\]\\[\alpha_i \ge 0, i=1,2,...,N\\]将上式的目标函数由极大转换成极小，就得到下面与之等价的对偶最优化问题\\[\min_\alpha\frac{1}{2}\sum_{i=1}^N\sum_{j=1}^N\alpha_i\alpha_jy_iy_j(x_i\cdot x_j) - \sum_{i=1}^N\alpha_i\tag{5}\\]subject to \\[\sum_{i=1}^N\alpha_iy_i = 0\\]\\[\alpha_i \ge 0, i=1,2,...,N\\]从对偶问题解出的$$\alpha_i$$是原式中的拉格朗日乘子。注意到原式中有不等式约束，因此上述过程需要满足KKT条件，即要求\\[\begin{equation}\begin{aligned} &\alpha_i \ge 0 \\\\ &y_if(x_i) - 1 \ge 0 \\\\ &\alpha_i(y_if(x_i) - 1) = 0 \end{aligned}\end{equation} \\]于是，对于训练数据$$(x_i,y_i)$$，总有$$\alpha_i = 0$$或$$y_if(x_i) = 1$$。若$$\alpha_i = 0$$，则该样本不会出现在上述求和公式中，也就不会对$$f(x)$$产生任何影响；若$$\alpha_i > 0$$则必有$$y_if(x_i) = 1$$，所对应样本点位于最大间隔上，是一个支持向量。这里显示出支持向量机的一个重要性质：训练完成后，大部分的训练样本都不需保留，最终模型仅与支持向量相关。
+
+$$\max_\alpha-\frac{1}{2}\sum_{i=1}^N\sum_{j=1}^N\alpha_i\alpha_jy_iy_j(x_i\cdot x_j) + \sum_{i=1}^N\alpha_i$$
+subject to 
+$$\sum_{i=1}^N\alpha_iy_i = 0$$
+
+$$\alpha_i \ge 0, i=1,2,...,N$$
+将上式的目标函数由极大转换成极小，就得到下面与之等价的对偶最优化问题
+$$\min_\alpha\frac{1}{2}\sum_{i=1}^N\sum_{j=1}^N\alpha_i\alpha_jy_iy_j(x_i\cdot x_j) - \sum_{i=1}^N\alpha_i\tag{5}$$
+subject to 
+$$\sum_{i=1}^N\alpha_iy_i = 0$$
+
+$$\alpha_i \ge 0, i=1,2,...,N$$
+从对偶问题解出的$$\alpha_i$$是原式中的拉格朗日乘子。注意到原式中有不等式约束，因此上述过程需要满足KKT条件，即要求
+$$\begin{equation}\begin{aligned} &\alpha_i \ge 0 \\\\ &y_if(x_i) - 1 \ge 0 \\\\ &\alpha_i(y_if(x_i) - 1) = 0 \end{aligned}\end{equation} $$
+于是，对于训练数据$$(x_i,y_i)$$，总有$$\alpha_i = 0$$或$$y_if(x_i) = 1$$。若$$\alpha_i = 0$$，则该样本不会出现在上述求和公式中，也就不会对$$f(x)$$产生任何影响；若$$\alpha_i > 0$$则必有$$y_if(x_i) = 1$$，所对应样本点位于最大间隔上，是一个支持向量。这里显示出支持向量机的一个重要性质：训练完成后，大部分的训练样本都不需保留，最终模型仅与支持向量相关。
 
 那么如何求解式(5)不难发现，这是一个二次规划问题，可使用通用的二次规划算法求解；然而，该问题的规模正比于训练样本数，这会在实际任务中造成很大的开销。为了避开这个障碍，人们通过利用问题本身的特性，提出了很多高校的算法，SMO(Sequential Minimal Optimization)是其中一个著名的代表。[详细的算法原理参看这篇文章](http://pytlab.org/2017/09/01/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E7%AE%97%E6%B3%95%E5%AE%9E%E8%B7%B5-SVM%E4%B8%AD%E7%9A%84SMO%E7%AE%97%E6%B3%95/)
 
@@ -63,22 +111,36 @@
 对这一点问题，可将样本从原始空间映射到一个更高维的特征空间，使得样本在这个空间内线性可分。
 ![](http://img.77qingliu.com/18-5-10/71429752.jpg)
 
-令$$\phi(x)$$表示将$$z$$映射后的特征向量，于是，在特征空间中划分超平面所对应的模型可表示为\\[f(x) = w^T\phi(x) + b\\]，然后对偶形式中也有数据向量的乘积，于是便可以进行替换:\\[\langle x_i, x_j\rangle \to \langle \phi(x_i), \phi(x_j)\rangle\\]式(5)变为\\[\min_\alpha\frac{1}{2}\sum_{i=1}^N\sum_{j=1}^N\alpha_i\alpha_jy_iy_j(\phi(x_i)\cdot \phi(x_j)) - \sum_{i=1}^N\alpha_i\\]求解上式涉及到计算$$\phi(x_i)\cdot \phi(x_j)$$，这是样本$$x_i$$与$$x_j$$映射到特征空间之后的内积。由于特征空间维数很高，甚至可能是无穷维，因此直接计算$$\phi(x_i)\cdot \phi(x_j)$$通常是困难的。为了避开这个障碍，可以设想这样一个函数：\\[K(x_i,x_j)=\phi(x_i)\cdot \phi(x_j)\\]即$$x_i$$与$$x_j$$在特征空间的内积等于他们在原始样本空间中通过函数$$K(\cdot,\cdot)$$计算的结果。有了这样的函数，我们就不必直接去计算高维甚至无穷维特征空间中的内积。
+令$$\phi(x)$$表示将$$z$$映射后的特征向量，于是，在特征空间中划分超平面所对应的模型可表示为
+$$f(x) = w^T\phi(x) + b$$
+，然后对偶形式中也有数据向量的乘积，于是便可以进行替换:
+$$\langle x_i, x_j\rangle \to \langle \phi(x_i), \phi(x_j)\rangle$$
+式(5)变为
+$$\min_\alpha\frac{1}{2}\sum_{i=1}^N\sum_{j=1}^N\alpha_i\alpha_jy_iy_j(\phi(x_i)\cdot \phi(x_j)) - \sum_{i=1}^N\alpha_i$$
+求解上式涉及到计算$$\phi(x_i)\cdot \phi(x_j)$$，这是样本$$x_i$$与$$x_j$$映射到特征空间之后的内积。由于特征空间维数很高，甚至可能是无穷维，因此直接计算$$\phi(x_i)\cdot \phi(x_j)$$通常是困难的。为了避开这个障碍，可以设想这样一个函数：
+$$K(x_i,x_j)=\phi(x_i)\cdot \phi(x_j)$$
+即$$x_i$$与$$x_j$$在特征空间的内积等于他们在原始样本空间中通过函数$$K(\cdot,\cdot)$$计算的结果。有了这样的函数，我们就不必直接去计算高维甚至无穷维特征空间中的内积。
 
 举一个例子来说明。$$令 x=[x_1, x_2, x_3]^T,y=[y_1, y_2, y_3]^T$$，我们定义$$\phi(x)=[x_1x_1,x_1x_2,x_1x_3,x_2x_1,x_2x_2,x_2x_3,x_3x_1,x_3x_2,x_3x_3] $$，将原始数据从三维空间映射到九维空间中，让我们来计算$$\phi(1,2,3) \cdot \phi(4,5,6)$$：
-\\[\begin{equation}\begin{aligned}
+
+$$\begin{equation}\begin{aligned}
 \phi(1,2,3)&=[1,2,3,2,4,6,3,6,9]^T \\\\ \phi(4,5,6)&=[16,20,24,20,25,30,24,30,36]^T \\\\ \phi(1,2,3) \cdot \phi(4,5,6) &=1\times16+2\times 20 + 3\times 24 + 2\times 20 + 4 \times 25 + 6 \times 30 + 3 \times 24 + 6 \times 30 + 9\times 36 \\\\ &=16+40+72+40+100+180+72+180+324 \\\\ &=1024
-\end{aligned}\end{equation}\\]
+\end{aligned}\end{equation}$$
+
 
 可以看出计算相当繁琐，嗯，我们来尝试找找对应的核函数：
-\\[\begin{equation}\begin{aligned}
+
+$$\begin{equation}\begin{aligned}
 \phi(x)\cdot \phi(y)&=[x_1x_1,x_1x_2,x_1x_3,x_2x_1,x_2x_2,x_2x_3,x_3x_1,x_3x_2,x_3x_3]^T\cdot [y_1y_1,y_1y_2,y_1y_3,y_2y_1,y_2y_2,y_2y_3,y_3y_1,y_3y_2,y_3y_3] \\\\ &= x_1y_1x_1y_1+x_1y_1x_2y_2+x_1y_1x_3y_3+x_2y_2x_1y_1+x_2y_2x_2y_2+x_2y_2x_3y_3\\&+x_3y_3x_1y_1+x_3y_3x_2y_2+x_3y_3x_3y_3\\\\ &=(x_1y_1+x_2y_2+x_3y_3)^2\\\\ &=(x^Ty)^2\\\\ &=K(x,y)
-\end{aligned}\end{equation}\\]
+\end{aligned}\end{equation}$$
+
 
 通过上面的推导，我们发现虽然维度转化的过程较为繁琐复杂，但是矢量点积的结果确实相当简洁，这一次我们直接用核函数计算：
-\\[
+
+$$
 K(x,y)=K((1,2,3),(4,5,6))=(1\times 4 + 2\times 5 + 3\times 6)^2=(32)^2=1024
-\\]
+$$
+
 相比于从低维映射到高维空间再进行矢量积运算，核函数大大简化了计算的过程，使得向更高维转化变为了可能，我们不需要知道低维空间的数据是怎样映射到高维空间的，我们只需要知道结果是怎么计算出来的。
 
 显然，如果知道合适映射$$\phi(\cdot)$$的具体形式，则可写出核函数$$K(\cdot)$$，但在现实任务中我们通常不知道$$\phi(\cdot)$$是什么形式，什么样的函数能做核函数呢？这里有一个定理：**只要一个对称函数所对应的核矩阵是半正定的，它就能作为核函数使用**。下表列出了几种常用的核函数。
@@ -91,34 +153,56 @@ K(x,y)=K((1,2,3),(4,5,6))=(1\times 4 + 2\times 5 + 3\times 6)^2=(32)^2=1024
 拉普拉斯核|$$K(x_i,x_j) = exp\left(-\frac{\|\|x_i-x_j\|\|}{\sigma}\right)$$|$$\sigma>0$$
 Sigmoid核|$$K(x_i,x_j) = \tanh(\beta x_i^Tx_j + \theta) $$|$$\tanh$$为双曲正切函数，$$\beta>0, \theta < 0$$
 
-我们注意到在线性支持向量机的对偶问题中，无论是目标函数还是决策函数都只涉及到输入与训练数据的内积。在对偶问题的目标函数中的内积$$\langle x_i,x_j \rangle$$可用核函数$$K(x_i,x_j) = \phi(x_i)\cdot\phi(x_j)$$来替代。此时的对偶的目标函数为\\[\min_\alpha\frac{1}{2}\sum_{i=1}^N\sum_{j=1}^N\alpha_i\alpha_jy_iy_jK(x_i,x_j) - \sum_{i=1}^N\alpha_i\\]同样，分类决策函数中的内积也可以用核函数来替代，而分类决策函数成为\\[f(x) = sign\left(\sum_{i=1}^N\alpha_iy_i\phi(x_i)\cdot\phi(x) + b\right) = sign\left(\sum_{i=1}^N\alpha_iy_iK(x_i, x) + b\right)\\]
+我们注意到在线性支持向量机的对偶问题中，无论是目标函数还是决策函数都只涉及到输入与训练数据的内积。在对偶问题的目标函数中的内积$$\langle x_i,x_j \rangle$$可用核函数$$K(x_i,x_j) = \phi(x_i)\cdot\phi(x_j)$$来替代。此时的对偶的目标函数为
+$$\min_\alpha\frac{1}{2}\sum_{i=1}^N\sum_{j=1}^N\alpha_i\alpha_jy_iy_jK(x_i,x_j) - \sum_{i=1}^N\alpha_i$$
+同样，分类决策函数中的内积也可以用核函数来替代，而分类决策函数成为
+$$f(x) = sign\left(\sum_{i=1}^N\alpha_iy_i\phi(x_i)\cdot\phi(x) + b\right) = sign\left(\sum_{i=1}^N\alpha_iy_iK(x_i, x) + b\right)$$
+
 
 ## 软间隔与正则化
-在前面的讨论中，我们一直假定训练样本在样本空间或者特征空间中是线性可分的，即存在一个超平面能将不同类的样本完全划分开。然而，现实任务中往往很难确定合适的核函数使得训练样本在特征空间中线性可分。也有可能造成线性不可分的原因可能是存在一些噪声点的影响，完全按照原始的约束条件\\[yi(wTxi+b)≥1\\]，意味着所有数据点距离分割平面的距离都大于1，可能会使SVM发生较大的误差，如下图
+在前面的讨论中，我们一直假定训练样本在样本空间或者特征空间中是线性可分的，即存在一个超平面能将不同类的样本完全划分开。然而，现实任务中往往很难确定合适的核函数使得训练样本在特征空间中线性可分。也有可能造成线性不可分的原因可能是存在一些噪声点的影响，完全按照原始的约束条件
+$$yi(wTxi+b)≥1$$
+，意味着所有数据点距离分割平面的距离都大于1，可能会使SVM发生较大的误差，如下图
 ![](http://img.77qingliu.com/18-5-11/4819920.jpg)
 
 缓解办法是允许支持向量机在一些样本上出错。为此，要引入“软间隔”的概念。具体来说，前面介绍的支持向量机形式是要求所有样本均满足约束，即所有样本都必须划分正确，这成为“硬间隔”，而软间隔则是允许某些样本不满足约束。为了能让达到此目的，我们可以引入一个松弛变量$$ξ_i≥0$$来允许错误的分类发生，也就是允许有间隔小于1的数据点出现, 即:
-\\[y_i(w^Tx_i+b)≥1−ξi\\]
+
+$$y_i(w^Tx_i+b)≥1−ξi$$
+
 
 ![](http://img.77qingliu.com/18-5-11/24259405.jpg)
 
 加入惩罚后，目标最优化间隔函数变为:
-\\[\arg\min_{w,b,ξ}\frac{1}{2}||w||^2 + C\sum_{i=1}^{N}ξ_i\\]
-subject to \\[y_i(w^T+b)≥1−ξ_i \\ ξ_i≥0,i=1,…,N\\]
+
+$$\arg\min_{w,b,ξ}\frac{1}{2}||w||^2 + C\sum_{i=1}^{N}ξ_i$$
+
+subject to 
+$$y_i(w^T+b)≥1−ξ_i \\ ξ_i≥0,i=1,…,N$$
+
 其中$$C$$为惩罚因子来衡量惩罚的程度, $$C$$越大表明离群点越不被希望出现。
 
 这仍是一个二次规划问题，于是，通过拉格朗日乘子法可得到下列朗格朗日函数
-\\[L(w,b,\alpha,ξ,\mu) = \frac{1}{2}{||w||}^2 + C\sum_{i=1}^{N}ξ_i +\sum^N_{i=1}\alpha_i[1 - ξ_i - y_i(w^Tx_i + b)] - \sum_{i=1}^N\mu_iξ_i\\]其中$$\alpha_i \ge 0, \mu_i \ge 0$$是拉格朗日乘子。
+
+$$L(w,b,\alpha,ξ,\mu) = \frac{1}{2}{||w||}^2 + C\sum_{i=1}^{N}ξ_i +\sum^N_{i=1}\alpha_i[1 - ξ_i - y_i(w^Tx_i + b)] - \sum_{i=1}^N\mu_iξ_i$$
+其中$$\alpha_i \ge 0, \mu_i \ge 0$$是拉格朗日乘子。
 
 令$$L(w,b,\alpha,ξ,\mu)$$对$$w,b,ξ_i$$的偏导为零可得
-\\[
+
+$$
 w = \sum_{i=1}^N\alpha_iy_ix_i\\
 0 = \sum_{i=1}^N\alpha_iy_i\\
 C = \alpha_i + \mu_i
-\\]
+$$
+
 
 然后将上式回代，我们求此问题的对偶问题:
-\\[\min_\alpha\frac{1}{2}\sum_{i=1}^N\sum_{j=1}^N\alpha_i\alpha_jy_iy_j(x_i\cdot x_j) - \sum_{i=1}^N\alpha_i\tag{5}\\]subject to \\[\sum_{i=1}^N\alpha_iy_i = 0\\]\\[ 0 \le \alpha_i \le C, i=1,2,...,N\\]
+
+$$\min_\alpha\frac{1}{2}\sum_{i=1}^N\sum_{j=1}^N\alpha_i\alpha_jy_iy_j(x_i\cdot x_j) - \sum_{i=1}^N\alpha_i\tag{5}$$
+subject to 
+$$\sum_{i=1}^N\alpha_iy_i = 0$$
+
+$$ 0 \le \alpha_i \le C, i=1,2,...,N$$
+
 
 可见，软间隔SVM的目标函数形式同硬间隔的形式相同，唯一不同的就在于$$\alpha_i$$的范围。
 
