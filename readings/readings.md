@@ -84,3 +84,6 @@
 # 人文
 ### 社会科学
 - [ ] [人类简史](https://book.douban.com/subject/25985021/)
+
+### 金融
+ - [ ] [涛动周期论](https://book.douban.com/subject/27599114/)
