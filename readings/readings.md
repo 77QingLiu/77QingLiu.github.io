@@ -13,6 +13,7 @@
 ### 概率论与数理统计
   - [x] [概率论与数理统计](https://book.douban.com/subject/2201479/)
   - [x] [统计学完全教程 : （All of Statistics）](https://book.douban.com/subject/2285151/)
+  - [ ] [统计推断第二版](https://book.douban.com/subject/1245344/)
 
 ### 线性代数
   - [x] [线性代数及其应用 ：（Linear Algebra and Its Applications）](https://book.douban.com/subject/1425950/)
@@ -29,7 +30,9 @@
   - [x] [统计学习方法（李航）](https://book.douban.com/subject/10590856/)
   - [x] [机器学习实战](https://book.douban.com/subject/24703171/)
   - [ ] [The Element of Statistical Learning](https://book.douban.com/subject/3294335/)
-  - [ ] [Data Mining: Concepts and Techniques](https://book.douban.com/subject/11542972/)
+  - [ ] [Machine Learning: a Probabilistic Perspective](https://book.douban.com/subject/10758624/)
+  - [ ] [Pattern Recognition and Machine Learning](https://book.douban.com/subject/2061116/)
+  - [x] [Data Mining: Concepts and Techniques](https://book.douban.com/subject/11542972/)
 
 ### 信用风险
   - [x] [信用风险评分卡研究](https://book.douban.com/subject/25812550/)
