@@ -1,6 +1,7 @@
 import datetime
 import re
 import os
+import sys
 
 main_template = """
 ---
@@ -52,4 +53,6 @@ def generate_file(title):
     open(file_path + title_file + '/en.md', 'a').close()
     open(file_path + title_file + '/zh.md', 'a').close()
 
-generate_file('aaa')
+if __name__ == '__main__':
+    title = ' '.join(sys.argv[1:])
+    generate_file(title)
