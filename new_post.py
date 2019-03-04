@@ -3,8 +3,7 @@ import re
 import os
 import sys
 
-main_template = """
----
+main_template = """---
 layout:   "post"
 title:    "{title}"
 date:     "{date}"
@@ -42,7 +41,7 @@ def generate_file(title):
     file_name = now.strftime('%Y-%m-%d') + '-' + title_file
     file_path = home + '/_posts/{year}/'.format(year=year)
 
-    if not os.path.exists(file_path + title_file):
+    if not os.path.exists(file_path + title_file + '.md'):
         os.makedirs(file_path + title_file)
 
     main_file = main_template.format(title=title, date=now.strftime('%Y-%m-%d %H:%M'), title_file=title_file)
