@@ -10,7 +10,7 @@ catalog:      true
 multilingual: true
 mathjax: true
 tags:
-    -
+    - Machine Learning
 ---
 <!-- Chinese Version -->
 <div class="zh post-container">
