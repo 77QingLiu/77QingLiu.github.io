@@ -4,7 +4,7 @@ title:    "roadmap to python data science"
 date:     "2019-04-02 09:07"
 subtitle: ""
 author:       "Qing"
-header-img:   //img.77qingliu.com/header/
+header-img:   //img.77qingliu.com/header/2019-04-03-235555.jpg
 header-mask:  0.3
 catalog:      true
 multilingual: true

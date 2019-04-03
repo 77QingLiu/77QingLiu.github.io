@@ -1,4 +1,4 @@
-这篇文章参考自外文[learning-path-data-science-python](https://www.analyticsvidhya.com/learning-paths-data-science-business-analytics-business-intelligence-big-data/learning-path-data-science-python/)，知乎大V也曾将其翻译成中文，并曾经在微博上被大量转发、收藏。这里为了给数据分析方面的Python新手提供一个完整的学习路径，我总结自己过去一段时间的学习经验，对所需学习的利用python进行数据分析的所有步骤完整概述。如果你已经有一些相关的背景知识，或者你不需要路径中的所有内容，你可以随意调整你自己的学习路径。
+这篇文章参考自外文[learning-path-data-science-python](https://www.analyticsvidhya.com/learning-paths-data-science-business-analytics-business-intelligence-big-data/learning-path-data-science-python/)，知乎大V也曾将其翻译成中文，并曾经在微博上被大量转发、收藏。这里为了给数据分析方面的Python新手提供一个完整的学习路径，我总结自己过去一段时间的学习经验，对所需学习的利用python进行数据分析的所有步骤完整概述。如果你已经有一些相关的背景知识，或者你不需要路径中的所有内容，你可以随意调整自己的学习路径。
 
 ### 步骤1：设置你的机器环境
 
@@ -33,14 +33,14 @@ Atom + Hydrogen的组合，弥补了Jupyter Notebook编辑能力的不足，同�
 * 类 Class
 * 包 Package
 
-![Python in one picture](http://77qingliu-blog.oss-cn-shanghai.aliyuncs.com/py3%20in%20one%20pic.png)
+[Python in one picture](http://77qingliu-blog.oss-cn-shanghai.aliyuncs.com/py3%20in%20one%20pic.png)
 
 这里重点是接触python中的一些基本概念和操作，以及理解编程中**面向对象编程**的一些思想。
 Learning by doing 是最好的学习方式，在学习过程中应该勤动手，解决一些Python教程题，这些题能让你更好的用Python脚本的方式去思考问题。此外，也可以用Python做一些小的项目，或者写一些小的脚本替代日常工作中一些重复的劳动。
 
 ### 步骤3：学习Python中的数据科学库—[NumPy](http://www.numpy.org/), [Pandas](https://pandas.pydata.org/), [SciPy](https://www.scipy.org/), [Matplotlib](https://matplotlib.org/)
 
-这里强烈推荐[Python Data Science Handbook](https://jakevdp.github.io/PythonDataScienceHandbook/)作为Python数据科学的入门读物，此书对Python 数据相关的库，如Numpy, Pandas, Sklearn等做了深入浅出的介绍，初学者读完此书能对Python Data Ecosystem有较全面的了解。同时，此书的作者不仅是一名数据科学家，更是画图堪比Tableau的Python库[Altair](https://altair-viz.github.io/)的主要开发者。
+这里强烈推荐[Python Data Science Handbook](https://jakevdp.github.io/PythonDataScienceHandbook/)作为Python数据科学的入门读物，此书对Python 数据相关的库如Numpy, Pandas, Sklearn等做了深入浅出的介绍，初学者读完此书能对Python Data Ecosystem有较全面的了解。同时，此书的作者不仅是一名数据科学家，更是画图堪比Tableau的Python库[Altair](https://altair-viz.github.io/)的主要开发者。
 
 在阅读这本书的过程中，学习到具体的章节时，推荐进行进一步的练习和扩展阅读。下面的一些资料可以作为一些参照
 * Numpy
@@ -102,4 +102,4 @@ Kaggle 怎么入门？
 
 ### 步骤6：深度学习
 
-现在你已经学习了大部分的机器学习技术，是时候关注一下深度学习了。这方面我自己也是深度学习的新手，所以这方面需要你们自己发挥
+现在你已经学习了大部分的机器学习技术，是时候关注一下深度学习了。这方面我自己也是深度学习的新手，这方面需要你自己发挥
