@@ -1273,7 +1273,7 @@ sns.kdeplot(score_test[df_score_test['y'] == 0]['score'], label="target: 0")
 
 因为时间比较仓促，有些错误在所难免。
 
-对应的Jupyter Notebook可以在这里找到：[credit.ipynb](https://github.com/77QingLiu/77QingLiu.github.io/resources/credit.ipynb
+对应的Jupyter Notebook可以在这里找到：[credit.ipynb](https://github.com/77QingLiu/77QingLiu.github.io/tree/master/resources
 )
 
 参考资料：
