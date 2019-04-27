@@ -46,7 +46,7 @@ def generate_file(title):
 
     main_file = main_template.format(title=title, date=now.strftime('%Y-%m-%d %H:%M'), title_file=title_file)
 
-    with open(file_path + file_name, + '.md' 'w') as f:
+    with open(file_path + file_name + '.md', 'w') as f:
         f.write(main_file)
 
     open(file_path + title_file + '/en.md', 'a').close()

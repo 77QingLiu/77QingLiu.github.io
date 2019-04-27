@@ -1,6 +1,6 @@
 ---
 layout:   "post"
-title:    "roadmap to python data science"
+title:    "Roadmap to python data science"
 date:     "2019-04-02 09:07"
 subtitle: ""
 author:       "Qing"
