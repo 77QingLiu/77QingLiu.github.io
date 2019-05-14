@@ -11,7 +11,7 @@
 对于初学者，我推荐Jupyter Notebook + 任意一款代码编辑器作为日常使用工具。Jupyter Notebook作为一款笔记类编辑器，集成了编辑+学习+记录+分享的功能，是一个初学者理想的学习工具。至于编辑器，这里强烈推荐[Visual Studio Code](https://code.visualstudio.com/)。
 
 对于有经验者，或者将python作为日常工作的同学，我更倾向于一个集成notebook + 编辑的环境，这里我推荐[Atom](https://atom.io/) + [Hydrogen(Atom Package)](https://nteract.gitbooks.io/hydrogen/)的组合
-![](https://cloud.githubusercontent.com/assets/13285808/20360886/7e03e524-ac03-11e6-9176-37677f226619.gif)
+![](http://img.77qingliu.com/post/2019-05-14-7e03e524-ac03-11e6-9176-37677f226619.gif)
 
 Atom + Hydrogen的组合，弥补了Jupyter Notebook编辑能力的不足，同时也让数据探索和分析更轻松，更是支持远程连接服务器的功能，极大的提高了实际工作中数据分析+挖掘的效率。
 
