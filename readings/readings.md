@@ -24,6 +24,11 @@
   - [x] [Python Data Science Handbook](https://book.douban.com/subject/26600459/)
   - [x] [Python for Data Analysis](https://book.douban.com/subject/10760444/)
 
+### 增长黑客
+  - [x] [增长黑客：如何低成本实现爆发式成长](https://book.douban.com/subject/27593848/)
+  - [ ] [硅谷增长黑客实战笔记](https://book.douban.com/subject/30186119/)
+  - [ ] [增长黑客](https://book.douban.com/subject/26541801/)
+
 
 ### 机器学习
   - [x] [机器学习（周志华）](https://book.douban.com/subject/26708119/)
@@ -31,7 +36,7 @@
   - [x] [机器学习实战](https://book.douban.com/subject/24703171/)
   - [ ] [The Element of Statistical Learning](https://book.douban.com/subject/3294335/)
   - [ ] [Machine Learning: a Probabilistic Perspective](https://book.douban.com/subject/10758624/)
-  - [ ] [Pattern Recognition and Machine Learning](https://book.douban.com/subject/2061116/)
+  - [x] [Pattern Recognition and Machine Learning](https://book.douban.com/subject/2061116/)
   - [x] [Data Mining: Concepts and Techniques](https://book.douban.com/subject/11542972/)
 
 ### 信用风险
@@ -89,4 +94,4 @@
 - [ ] [人类简史](https://book.douban.com/subject/25985021/)
 
 ### 金融
- - [ ] [涛动周期论](https://book.douban.com/subject/27599114/)
+ - [x] [涛动周期论](https://book.douban.com/subject/27599114/)
